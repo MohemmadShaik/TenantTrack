@@ -136,7 +136,7 @@ Validation
 
 ```
 
-- Directory Structure (after unzip)
+##Project Directory Structure (tenant-backend focus) (after unzip)
   
 tenant-backend/
 ├── src/
@@ -190,7 +190,8 @@ tenant-backend/
  ## 3.2 - Create Tenant Model✅
 - In D:\TenantProject\TenantTrack\tenant-backend\src\main\java\com\tenanttrack\tenant_backend, create a new file Tenant.java
 - Code in Tenant.java :
-
+  
+```
 package com.tenanttrack.tenant_backend.model;
 
 import org.springframework.data.annotation.Id;
@@ -210,7 +211,7 @@ public class Tenant {
     private Double rent;
 
 
-    //Getters and Setters
+  //Getters and Setters
     public String getId() {
         return id;
     }
@@ -248,25 +249,27 @@ public class Tenant {
         this.rent = rent;
     }
 }
-
+```
 ## 3.3 - Create Repository for CRUD Operations ✅
    
 - In the same directory, create TenantRepository.java
 - Code in TenantRepository.java
 
+```
 package com.tenanttrack.tenant_backend.repository;
 
 import com.tenanttrack.tenant_backend.model.Tenant;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface TenantRepository extends MongoRepository<Tenant,String> { }
+```
 
 ## 3.4 - Test MongoDB Connection
 
 - Add a simple service to test the connection. In the same directory, create TenantService.java
 - Code in TenantService.java
-
-  package com.tenanttrack.tenant_backend.service;
+```
+package com.tenanttrack.tenant_backend.service;
 
 import com.tenanttrack.tenant_backend.model.Tenant;
 import com.tenanttrack.tenant_backend.repository.TenantRepository;
@@ -278,10 +281,11 @@ import java.util.List;
 public class TenantService {
     private final TenantRepository repo;
     public TenantService(TenantRepository repo){ this.repo = repo; }
-
-    public List<Tenant> all(){ return repo.findAll(); }
-    public Tenant add(Tenant t){ return repo.save(t); }
+    
+  public List<Tenant> all(){ return repo.findAll(); }
+  public Tenant add(Tenant t){ return repo.save(t); }
 }
+```
    
 
 
