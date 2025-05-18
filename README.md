@@ -108,8 +108,8 @@ Mohammad@ASUS-TUF-GAMING-A15 MINGW64 /d/TenantProject
  ---
 
 # Day 3 Action Plan :
-** Goal: ** Set up Java backend with Spring Boot and MongoDB integration.
-** Tasks: **
+**Goal:** Set up Java backend with Spring Boot and MongoDB integration.
+**Tasks:**
 1. Set Up Spring Boot Project : Use Spring Initializr (https://start.spring.io), select Java 17, Maven, add Spring Web, Spring Data MongoDB, and Spring Security. Download, unzip, open in VS Code.
 2. Run MongoDB in Docker : Run docker run -d -p 27017:27017 --name tenant-mongo mongo:latest.
 3. Connect Spring Boot to MongoDB : Add MongoDB URI (mongodb://localhost:27017/tenantdb) in application.properties, create a Tenant model, and a repository for CRUD operations.
@@ -118,19 +118,19 @@ Mohammad@ASUS-TUF-GAMING-A15 MINGW64 /d/TenantProject
 
 ## Day 3 Update :
 
-## STEP 1 : Using Spring Initializr (https://start.spring.io) with below settings, Generate Project completed.✅
-Settings:
-Project: Maven
-Language: Java
-Spring Boot: 3.2.x or latest
-Group: com.tenanttrack
-Artifact: tenant-backend
-Dependencies:
-Spring Web
-Spring Data MongoDB
-Lombok
-Spring Boot DevTools
-Validation
+## STEP 1 : Using Spring Initializr (https://start.spring.io) with below settings, Generate Project completed.✅<br>
+Settings:  
+Project: Maven  
+Language: Java  
+Spring Boot: 3.2.x or latest  
+Group: com.tenanttrack  
+Artifact: tenant-backend  
+Dependencies   
+Spring Web  
+Spring Data MongoDB  
+Lombok  
+Spring Boot DevTools  
+Validation  
 
 - And then extracted the downloaded zip file and launched vs code by rightclicking on tenant-backend folder available at path D:\TenantProject\TenantTrack\tenant-backend.
 
