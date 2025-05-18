@@ -71,7 +71,7 @@ A project to manage tenant data using a modern tech stack.
 - Issue: Missing docker-desktop-data in wsl --list --verbose. Needs fixing. ⚠️ 
 - Git, Postman: Not yet started (to be addressed after Docker).
 
-** ⚠️ Day 2 Status in progress : 70% of Day2 task completed and The docker-desktop-data issue is blocking full Docker functionality, critical for TenantTrack’s MongoDB backend. Fixing this now ensures smooth progress. **
+**⚠️ Day 2 Status in progress : 70% of Day2 task completed and The docker-desktop-data issue is blocking full Docker functionality, critical for TenantTrack’s MongoDB backend. Fixing this now ensures smooth progress.**
 
 - Finally, Resolved Docker Desktop issues by uninstalling and reinstalling Docker, moved disk images to D: drive (`D:\DockerData\DockerDesktopWSL`),
   confirmed new Docker Desktop 4.40.0+ structure with `docker-desktop` distro, enabled MongoDB containers with 18.4GB on C:, 149GB on D:, 4GB RAM, 4 CPUs. ✅
