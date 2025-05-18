@@ -134,6 +134,8 @@ Validation
 
 - And then extracted the downloaded zip file and launched vs code by rightclicking on tenant-backend folder available at path D:\TenantProject\TenantTrack\tenant-backend.
 
+```
+
 - Directory Structure (after unzip)
   
 tenant-backend/
@@ -149,28 +151,7 @@ tenant-backend/
 │           └── application.properties
 ├── pom.xml
 
-
-## Project Directory Structure (tenant-backend focus)
-
-
-tenant-backend/
-├── pom.xml
-└── src/
-    └── main/
-        ├── java/
-        │   └── com/tenanttrack/tenant_backend/
-        │       ├── TenantBackendApplication.java
-        │       ├── controller/
-        │       ├── model/
-        │       ├── repository/
-        │       └── service/
-        └── resources/
-            └── application.properties
 ```
-
-> Copy the fenced block above into **README.md** to preserve formatting on GitHub.
-
-
 
 - In VS code, opened pom.xml file and Verified all dependencies (i.e.; Spring Web, Spring Data MongoDB, Lombok, Spring Boot DevTools and Validation) were listed.
 
