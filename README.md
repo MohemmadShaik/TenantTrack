@@ -55,9 +55,8 @@ A project to manage tenant data using a modern tech stack.
 - Issues: None—smooth sailing!
 
 # ✅ Day 1 Status : Task completed successfully!
+---
 
----
----
 
 **Day 2 Action Plan: Install Docker, Git, and Postman**
 **Goal:** Install and verify Docker Desktop, Git, and Postman and also switch Java JDK22 to JDK17 (LTS) version to complete your development environment setup for TenantTrack project.
@@ -106,8 +105,6 @@ Mohammad@ASUS-TUF-GAMING-A15 MINGW64 /d/TenantProject
 
   
  #  ✅ Day 2 Status : Task completed successfully!
-
- ---
  ---
 
 **Day 3 Action Plan :**
@@ -151,6 +148,28 @@ tenant-backend/
 │       └── resources/
 │           └── application.properties
 ├── pom.xml
+
+
+## Project Directory Structure (tenant-backend focus)
+
+
+tenant-backend/
+├── pom.xml
+└── src/
+    └── main/
+        ├── java/
+        │   └── com/tenanttrack/tenant_backend/
+        │       ├── TenantBackendApplication.java
+        │       ├── controller/
+        │       ├── model/
+        │       ├── repository/
+        │       └── service/
+        └── resources/
+            └── application.properties
+```
+
+> Copy the fenced block above into **README.md** to preserve formatting on GitHub.
+
 
 
 - In VS code, opened pom.xml file and Verified all dependencies (i.e.; Spring Web, Spring Data MongoDB, Lombok, Spring Boot DevTools and Validation) were listed.
