@@ -71,7 +71,7 @@ A project to manage tenant data using a modern tech stack.
 - Issue: Missing docker-desktop-data in wsl --list --verbose. Needs fixing. ⚠️ 
 - Git, Postman: Not yet started (to be addressed after Docker).
 
-## ⚠️ Day 2 Status in progress : 70% of Day2 task completed and The docker-desktop-data issue is blocking full Docker functionality, critical for TenantTrack’s MongoDB backend. Fixing this now ensures smooth progress.
+** ⚠️ Day 2 Status in progress : 70% of Day2 task completed and The docker-desktop-data issue is blocking full Docker functionality, critical for TenantTrack’s MongoDB backend. Fixing this now ensures smooth progress. **
 
 - Finally, Resolved Docker Desktop issues by uninstalling and reinstalling Docker, moved disk images to D: drive (`D:\DockerData\DockerDesktopWSL`),
   confirmed new Docker Desktop 4.40.0+ structure with `docker-desktop` distro, enabled MongoDB containers with 18.4GB on C:, 149GB on D:, 4GB RAM, 4 CPUs. ✅
@@ -80,36 +80,36 @@ A project to manage tenant data using a modern tech stack.
 - GitHub Repo URL: https://github.com/MohemmadShaik/TenantTrack.git ✅
 - Postman Test: Status 200 OK, Response includes current_user_url and other GitHub API endpoints. ✅
 
-##Command prompt terminal window :
+# Command prompt terminal window :
 C:\Users\Mohammad>git --version
-##git version 2.49.0.windows.1 ✅
+## git version 2.49.0.windows.1 ✅
 
 C:\Users\Mohammad>git config --global user.name
-##MohemmadShaik ✅
+## MohemmadShaik ✅
 
 C:\Users\Mohammad>git config --global user.email
-##mohemmadshaik@gmail.com ✅
+## mohemmadshaik@gmail.com ✅
 
 
-##Git bash terminal window : 
+# Git bash terminal window : 
 
 Mohammad@ASUS-TUF-GAMING-A15 MINGW64 /d/TenantProject
-##$ git clone https://github.com/MohemmadShaik/TenantTrack.git ✅
+## $ git clone https://github.com/MohemmadShaik/TenantTrack.git ✅
 
 
-##Postman setup :
+# Postman setup :
 
-##Google A/c : mohemmadshaik@gmail.com ✅
-##Username : Hazarudin  ✅
-##Worspace: TenantTrack ✅
+## Google A/c : mohemmadshaik@gmail.com ✅
+## Username : Hazarudin  ✅
+## Worspace: TenantTrack ✅
 
   
  #  ✅ Day 2 Status : Task completed successfully!
  ---
 
 # Day 3 Action Plan :
-**Goal:** Set up Java backend with Spring Boot and MongoDB integration.
-**Tasks:**
+** Goal: ** Set up Java backend with Spring Boot and MongoDB integration.
+** Tasks: **
 1. Set Up Spring Boot Project : Use Spring Initializr (https://start.spring.io), select Java 17, Maven, add Spring Web, Spring Data MongoDB, and Spring Security. Download, unzip, open in VS Code.
 2. Run MongoDB in Docker : Run docker run -d -p 27017:27017 --name tenant-mongo mongo:latest.
 3. Connect Spring Boot to MongoDB : Add MongoDB URI (mongodb://localhost:27017/tenantdb) in application.properties, create a Tenant model, and a repository for CRUD operations.
@@ -136,7 +136,7 @@ Validation
 
 ```
 
-##Project Directory Structure (tenant-backend focus) (after unzip)
+## Project Directory Structure (tenant-backend focus) (after unzip)
   
 tenant-backend/
 ├── src/
