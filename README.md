@@ -119,7 +119,7 @@ Mohammad@ASUS-TUF-GAMING-A15 MINGW64 /d/TenantProject
 ## Day 3 Update :
 
 ## STEP 1 : Using Spring Initializr (https://start.spring.io) with below settings, Generate Project completed.✅<br>
-Settings:  
+## Settings:   
 Project: Maven  
 Language: Java  
 Spring Boot: 3.2.x or latest  
