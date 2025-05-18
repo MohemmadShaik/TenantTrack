@@ -55,7 +55,7 @@ A project to manage tenant data using a modern tech stack.
 - Issues: None—smooth sailing!
 
 # ✅ Day 1 Status : Task completed successfully!
----
+
 
 
 # Day 2 Action Plan: Install Docker, Git, and Postman
@@ -105,7 +105,7 @@ Mohammad@ASUS-TUF-GAMING-A15 MINGW64 /d/TenantProject
 
   
  #  ✅ Day 2 Status : Task completed successfully!
- ---
+
 
 # Day 3 Action Plan :
 **Goal:** Set up Java backend with Spring Boot and MongoDB integration.
@@ -159,7 +159,7 @@ tenant-backend/
   and Checked the “Started TenanttrackApplication” in logs successfully.
 
 ## KEY NOTES :
---------------
+
 - TenantBackendApplication.java (the Spring Boot entry point) typically stays at the root of the package (com.tenanttrack.tenant_backend) to maintain Spring Boot’s default configuration.
   
 - **Restarting the Spring Boot App :** Running mvn spring-boot:run in VS Code does indeed start the Spring Boot application, which means executing TenantBackendApplication.java (the main class). This file (D:\TenantProject\TenantTrack\tenant- 
@@ -180,7 +180,7 @@ tenant-backend/
 - The docker ps output shows the tenant-mongo container (image: mongo:latest) is running successfully, with port 27017 mapped (0.0.0.0:27017->27017/tcp). The container started 35 seconds ago and has been up for 34 seconds. ✅
 
 ## STEP 3 : Steps to Connect Spring Boot to MongoDB✅
-------------------------------------------------------
+
 
  ## 3.1 - Add MongoDB URI in application.properties✅
 - Open D:\TenantProject\TenantTrack\tenant-backend\src\main\resources\application.properties in VS Code and append:
