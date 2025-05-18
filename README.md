@@ -43,11 +43,11 @@ A project to manage tenant data using a modern tech stack.
 
 # TenantTrack Daily Tasks amd Progress Overview 📈
 
-#Day 1 Action Plan :  Install OpenJDK, Maven, and VS Code
+# Day 1 Action Plan :  Install OpenJDK, Maven, and VS Code
 **Goal:** Install and verify OpenJDK 17, Maven, and VS Code to set up your development environment for TenantTrack.
 **Outcome:** Tools installed, verified, and ready for Java and Spring Boot development.
 
-##Day 1 Update :
+## Day 1 Update :
 - OpenJDK 22: Installed JDK22, verified with java -version.✅
 - Maven: Installed, verified with mvn -version.✅
 - VS Code: Installed with Java Extension Pack, Spring Boot Extension Pack, and Docker extensions.✅
@@ -58,11 +58,11 @@ A project to manage tenant data using a modern tech stack.
 ---
 
 
-#Day 2 Action Plan: Install Docker, Git, and Postman
+# Day 2 Action Plan: Install Docker, Git, and Postman
 **Goal:** Install and verify Docker Desktop, Git, and Postman and also switch Java JDK22 to JDK17 (LTS) version to complete your development environment setup for TenantTrack project.
 **Outcome:** Docker running containers, Git ready for version control, Postman set up for API testing.
 
-##Day 2 Update :
+## Day 2 Update :
 - OpenJDK 17 : Switched from Java JDK 22 to  JDK 17 version. ✅
 - System: AMD64 (x64-based), AMD Ryzen 5 4600H 3.00 GHz, Windows 11 Home 23H2. ✅
 - Docker Desktop (AMD64): Installed, ran docker run hello-world successfully. ✅
@@ -71,7 +71,7 @@ A project to manage tenant data using a modern tech stack.
 - Issue: Missing docker-desktop-data in wsl --list --verbose. Needs fixing. ⚠️ 
 - Git, Postman: Not yet started (to be addressed after Docker).
 
-##⚠️ Day 2 Status in progress : 70% of Day2 task completed and The docker-desktop-data issue is blocking full Docker functionality, critical for TenantTrack’s MongoDB backend. Fixing this now ensures smooth progress.
+## ⚠️ Day 2 Status in progress : 70% of Day2 task completed and The docker-desktop-data issue is blocking full Docker functionality, critical for TenantTrack’s MongoDB backend. Fixing this now ensures smooth progress.
 
 - Finally, Resolved Docker Desktop issues by uninstalling and reinstalling Docker, moved disk images to D: drive (`D:\DockerData\DockerDesktopWSL`),
   confirmed new Docker Desktop 4.40.0+ structure with `docker-desktop` distro, enabled MongoDB containers with 18.4GB on C:, 149GB on D:, 4GB RAM, 4 CPUs. ✅
@@ -107,7 +107,7 @@ Mohammad@ASUS-TUF-GAMING-A15 MINGW64 /d/TenantProject
  #  ✅ Day 2 Status : Task completed successfully!
  ---
 
-#Day 3 Action Plan :
+# Day 3 Action Plan :
 **Goal:** Set up Java backend with Spring Boot and MongoDB integration.
 **Tasks:**
 1. Set Up Spring Boot Project : Use Spring Initializr (https://start.spring.io), select Java 17, Maven, add Spring Web, Spring Data MongoDB, and Spring Security. Download, unzip, open in VS Code.
@@ -116,9 +116,9 @@ Mohammad@ASUS-TUF-GAMING-A15 MINGW64 /d/TenantProject
 4. Create Basic API : Build a REST controller with endpoints (GET /tenants, POST /tenants) to list and add tenants.
 5. Test and Commit : Test APIs with Postman, commit changes to GitHub (git add ., git commit -m "Day 3 backend setup", git push).
 
-##Day 3 Update :
+## Day 3 Update :
 
-##STEP 1 : Using Spring Initializr (https://start.spring.io) with below settings, Generate Project completed.✅
+## STEP 1 : Using Spring Initializr (https://start.spring.io) with below settings, Generate Project completed.✅
 Settings:
 Project: Maven
 Language: Java
@@ -158,7 +158,7 @@ tenant-backend/
 - ✅Finally, Run the java apllication src\main\java\com\tenanttrack\tenant_backend\TenantBackendApplication.java
   and Checked the “Started TenanttrackApplication” in logs successfully.
 
-##KEY NOTES :
+## KEY NOTES :
 --------------
 - TenantBackendApplication.java (the Spring Boot entry point) typically stays at the root of the package (com.tenanttrack.tenant_backend) to maintain Spring Boot’s default configuration.
   
@@ -168,18 +168,19 @@ tenant-backend/
 - **How It Works in VS Code :** When you run mvn spring-boot:run in the terminal within VS Code, it automatically triggers TenantBackendApplication.java. Alternatively, you can use VS Code’s Run button on TenantBackendApplication.java
                                 (if the Spring Boot Extension Pack is installed), which does the same thing.
 
-##Confirmation of Spring Boot Setup : 
+## Confirmation of Spring Boot Setup : 
   ✅Successfully generated the Spring Boot 3.4.5 project, extracted it to D:\TenantProject\TenantTrack\tenant-backend, opened it in VS Code with required extensions (Spring Boot Extension Pack, Java Extension Pack, Docker),
      verified dependencies in pom.xml, and ran the application (TenantBackendApplication.java), confirming “Started TenanttrackApplication” in logs. ✅
 
 
-##STEP 2 : Steps to Run MongoDB in Docker.✅
+## STEP 2 : Steps to Run MongoDB in Docker.✅
 - First of all ensure the Docker Desktop is open and in running state before running any docker commands.
 - Now open powershell window and navigate to the path PS D:\DockerData\DockerDesktopWSL\disk> and type Run docker run -d -p 27017:27017 --name tenant-mongo mongo:latest.
 - Now use docker ps commmand to display the containers or images so far created in the docker.
 - The docker ps output shows the tenant-mongo container (image: mongo:latest) is running successfully, with port 27017 mapped (0.0.0.0:27017->27017/tcp). The container started 35 seconds ago and has been up for 34 seconds. ✅
 
-##STEP 3 : Steps to Connect Spring Boot to MongoDB✅
+## STEP 3 : Steps to Connect Spring Boot to MongoDB✅
+------------------------------------------------------
 
  ## 3.1 - Add MongoDB URI in application.properties✅
 - Open D:\TenantProject\TenantTrack\tenant-backend\src\main\resources\application.properties in VS Code and append:
