@@ -46,9 +46,9 @@ A project to manage tenant data using a modern tech stack.
 
 - Windows 11 Home (23H2)  
 
-### Note : **ALL LISTED TOOLS AND TECHNOLOGIES ARE FREE OF COST FOR PERSONAL USE OR OPEN-SOURCE.** 📢 (Docker Desktop is free for personal use; Postman has a free tier; Windows 11 Home (23H2) is pre-installed.)
+#### Note : **ALL LISTED TOOLS AND TECHNOLOGIES ARE FREE OF COST FOR PERSONAL USE OR OPEN-SOURCE.** 📢 (Docker Desktop is free for personal use;  Postman has a free tier;  Windows 11 Home (23H2) is pre-installed.)
 
-# TenantTrack Daily Tasks amd Progress Overview 📈  
+# TenantTrack Daily Tasks & Progress Overview 📈  
 
 ## Day 1 Action Plan :  Install OpenJDK, Maven, and VS Code
 
@@ -143,7 +143,7 @@ A project to manage tenant data using a modern tech stack.
 
 Project: Maven  
 Language: Java  
-Spring Boot: 3.2.x or latest  
+Spring Boot: 3.4.5 or latest (For TenantTrack Project we used 3.4.5 stabled version)
 Group: com.tenanttrack  
 Artifact: tenant-backend  
 Dependencies
@@ -194,7 +194,7 @@ tenant-backend/
 
 ## STEP 2 : Steps to Run MongoDB in Docker.✅
 
-- First of all ensure the Docker Desktop is open and in running state before 
+- First of all ensure the Docker Desktop is open and in running state before
   running any docker commands.
 - Now open powershell window and navigate to the path  
 
@@ -431,7 +431,7 @@ Output in the Response body : [] (empty array (or) we can say empty list  since 
 
 ## Step 5.2 :  Now Test the POST request in Postman ✅
 
-- Set method to POST, URL: [http://localhost:8080/tenants]
+- Set method to POST, URL: [http://localhost:8080/api/tenants]
 - Go to Body > raw > JSON, add:
 
     ```Json
@@ -488,4 +488,26 @@ Output in Respose body: [{"id":"682b397078f66a3fda161d1a","name":"Faisal","phone
 
   ```
 
+Let's Test and Confirm the Spring Boot app runs with no issues with the current setup done so far (i.e Day 1 to Day 3) by running the mvn spring-boot:run in the vs code terminal window (or) directly executing the TenantBackendApplication.java (the main root class).
+
+```Java Output
+PS D:\TenantProject\TenantTrack\tenant-backend> mvn spring-boot:run
+
+2025-05-20T02:33:37.663+05:30  INFO 18624 --- [tenant-backend] [localhost:27017] org.mongodb.driver.cluster : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=36326300, minRoundTripTimeNanos=0}
+2025-05-20T02:33:37.767+05:30  INFO 18624 --- [tenant-backend] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer : LiveReload server is running on port 35729
+2025-05-20T02:33:38.236+05:30  INFO 18624 --- [tenant-backend] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer : Tomcat started on port 8080 (http) with context path '/'
+2025-05-20T02:33:38.245+05:30  INFO 18624 --- [tenant-backend] [  restartedMain] c.t.t.TenantBackendApplication : Started TenantBackendApplication in 2.763 seconds (process running for 3.201)
+
+```
+
+## Analysis
+
+- **MongoDB Connection :** Successfully connected to MongoDB at localhost:27017 (state=CONNECTED). This  confirms the tenant-mongo container is running, and Spring Boot’s connection to tenantdb is working. ✅
+- **LiveReload :**Enabled on port 35729 (due to Spring Boot DevTools), supporting faster development. ✅
+- **Tomcat Server :** Started on port 8080 with context path /, meaning APIs are accessible at [http://localhost:8080/api/tenants]. ✅
+- **App Startup :** Started TenantBackendApplication in 2.763 seconds, indicating the app is running smoothly with no errors. ✅
+- **Naming Note :** The log now correctly shows “TenantBackendApplication” (uppercase ‘B’), resolving the earlier lowercase inconsistency (“TenanttrackApplication”)
+
 # ✅ Day 3 Status : Task completed successfully
+
+The Spring Boot app (version 3.4.5) is running smoothly with no issues,And all components (MongoDB, APIs) are functional, and Day 3 tasks are fully complete. ✅
