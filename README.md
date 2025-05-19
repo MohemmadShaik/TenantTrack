@@ -46,16 +46,16 @@ A project to manage tenant data using a modern tech stack.
 
 - Windows 11 Home (23H2)  
 
-### Note : **ALL LISTED TOOLS AND TECHNOLOGIES ARE FREE OF COST FOR PERSONAL USE OR OPEN-SOURCE.** 📢 (Docker Desktop is free for personal use; Postman has a free tier; Windows 11 Home is assumed to be pre-installed.)
+### Note : **ALL LISTED TOOLS AND TECHNOLOGIES ARE FREE OF COST FOR PERSONAL USE OR OPEN-SOURCE.** 📢 (Docker Desktop is free for personal use; Postman has a free tier; Windows 11 Home (23H2) is pre-installed.)
 
-# TenantTrack Daily Tasks amd Progress Overview 📈
+# TenantTrack Daily Tasks amd Progress Overview 📈  
 
-# Day 1 Action Plan :  Install OpenJDK, Maven, and VS Code
+## Day 1 Action Plan :  Install OpenJDK, Maven, and VS Code
 
 **Goal:** Install and verify OpenJDK 17, Maven, and VS Code to set up your development environment for TenantTrack.
 **Outcome:** Tools installed, verified, and ready for Java and Spring Boot development.
 
-## Day 1 Update -->
+### Day 1 Update
 
 - OpenJDK 22: Installed JDK22, verified with java -version.✅
 - Maven: Installed, verified with mvn -version.✅
@@ -65,12 +65,12 @@ A project to manage tenant data using a modern tech stack.
 
 # ✅ Day 1 Status : Task completed successfully
 
-# Day 2 Action Plan : Install Docker, Git, and Postman
+## Day 2 Action Plan : Install Docker, Git, and Postman
 
 **Goal:** Install and verify Docker Desktop, Git, and Postman and also switch Java JDK22 to JDK17 (LTS) version to complete your development environment setup for TenantTrack project.
 **Outcome:** Docker running containers, Git ready for version control, Postman set up for API testing.
 
-## Day 2 Update -->
+### Day 2 Update
 
 - OpenJDK 17 : Switched from Java JDK 22 to  JDK 17 version. ✅
 - System: AMD64 (x64-based), AMD Ryzen 5 4600H 3.00 GHz, Windows 11 Home 23H2. ✅
@@ -87,34 +87,34 @@ A project to manage tenant data using a modern tech stack.
   confirmed new Docker Desktop 4.40.0+ structure with `docker-desktop` distro, enabled MongoDB containers with 18.4GB on C:, 149GB on D:, 4GB RAM, 4 CPUs. ✅
 - Git and Postman successfully set up.✅
 - Git Version: git version 2.43.0.windows.1 ✅
-- GitHub Repo URL: https://github.com/MohemmadShaik/TenantTrack.git ✅
+- GitHub Repo URL: [https://github.com/MohemmadShaik/TenantTrack.git] ✅
 - Postman Test: Status 200 OK, Response includes current_user_url and other GitHub API endpoints. ✅
 
-# Command prompt terminal window -
+## Command prompt terminal window
 
-## C:\Users\Mohammad>git --version
+### C:\Users\Mohammad>git --version
 
    **git version 2.49.0.windows.1** ✅
 
-## C:\Users\Mohammad>git config --global user.name
+### C:\Users\Mohammad>git config --global user.name
 
    **MohemmadShaik** ✅
 
-## C:\Users\Mohammad>git config --global user.email
+### C:\Users\Mohammad>git config --global user.email
 
    [mohemmadshaik@gmail.com] ✅
 
-## Git bash terminal window -->
+## Git bash terminal window
 
 ### Mohammad@ASUS-TUF-GAMING-A15 MINGW64 /d/TenantProject
 
 ```bash
 
-## $ git clone https://github.com/MohemmadShaik/TenantTrack.git ✅
+ $git clone https://github.com/MohemmadShaik/TenantTrack.git ✅
 
 ```
 
-# Postman setup -->
+# Postman setup
 
 ## Google A/c : [mohemmadshaik@gmail.com] ✅
 
@@ -124,22 +124,22 @@ A project to manage tenant data using a modern tech stack.
 
 # ✅ Day 2 Status : Task completed successfully
 
-# Day 3 Action Plan -->
+## Day 3 Action Plan
 
-**Goal:** Set up Java backend with Spring Boot and MongoDB integration.
-**Tasks:**
+**Goal :** Set up Java backend with Spring Boot and MongoDB integration.
+**Tasks :**
 
-  1. Set Up Spring Boot Project : Use Spring Initializr (https://start.spring.io), select Java 17, Maven, add Spring Web, Spring Data MongoDB, and Spring Security. Download, unzip, open in VS Code.
+  1. Set Up Spring Boot Project : Use Spring Initializr [https://start.spring.io], select Java 17, Maven, add Spring Web, Spring Data MongoDB, and Spring Security. Download, unzip, open in VS Code.
   2. Run MongoDB in Docker : Run docker run -d -p 27017:27017 --name tenant-mongo mongo:latest.
   3. Connect Spring Boot to MongoDB : Add MongoDB URI (mongodb://localhost:27017/tenantdb) in application.properties, create a Tenant model, and a repository for CRUD operations.
   4. Create Basic API : Build a REST controller with endpoints (GET /tenants, POST /tenants) to list and add tenants.
   5. Test and Commit : Test APIs with Postman, commit changes to GitHub (git add ., git commit -m "Day 3 backend setup", git     push).
 
-## Day 3 Update -->
+### Day 3 Update
 
-## STEP 1 : Using Spring Initializr (https://start.spring.io) with below settings, Generate Project completed.✅
+## STEP 1 : Using Spring Initializr [https://start.spring.io] with below settings, Generate Project completed.✅
 
-## Settings -->
+## Settings
 
 Project: Maven  
 Language: Java  
@@ -179,7 +179,7 @@ tenant-backend/
 - ✅Finally, Run the java apllication src\main\java\com\tenanttrack\tenant_backend\TenantBackendApplication.java
   and Checked the “Started TenanttrackApplication” in logs successfully.
 
-## KEY NOTES -->
+## KEY NOTES
 
 - TenantBackendApplication.java (the Spring Boot entry point) typically stays at the root of the package (com.tenanttrack.tenant_backend) to maintain Spring Boot’s default configuration.
   
@@ -187,7 +187,7 @@ tenant-backend/
   
 - **How It Works in VS Code :** When you run mvn spring-boot:run in the terminal within VS Code, it automatically triggers TenantBackendApplication.java. Alternatively, you can use VS Code’s Run button on TenantBackendApplication.java (if the Spring Boot Extension Pack is installed), which does the same thing.
 
-## Confirmation of Spring Boot Setup -->
+## Confirmation of Spring Boot Setup
 
   ✅Successfully generated the Spring Boot 3.4.5 project, extracted it to D:\TenantProject\TenantTrack\tenant-backend, opened it in VS Code with required extensions (Spring Boot Extension Pack, Java Extension Pack, Docker),
   verified dependencies in pom.xml, and ran the application (TenantBackendApplication.java), confirming “Started TenanttrackApplication” in logs. ✅
@@ -211,7 +211,7 @@ tenant-backend/
 
 ## 3.1 - Add MongoDB URI in application.properties✅
 
-- Open D:\TenantProject\TenantTrack\tenant-backend\src\main\resources\application.           ````properties in VS Code and append:
+- Open D:\TenantProject\TenantTrack\tenant-backend\src\main\resources\application.        properties in VS Code and append:
     spring.data.mongodb.uri=mongodb://localhost:27017/tenantdb
     spring.data.mongodb.database=tenantdb
   
@@ -278,6 +278,7 @@ public class Tenant {
         this.rent = rent;
     }
 }
+
 ```
 
 ## 3.3 - Create Repository for CRUD Operations ✅
@@ -355,19 +356,20 @@ public class TenantController {
         return service.add(tenant);
     }
 }
+
 ```
 
 # Step 5 : Test APIs with Postman ✅  
 
 ## Step 5.1 - GET all tenants ✅
 
-## (A) -->
+## 5.1-(A)
 
 - First ensure the Spring Boot application is in running state which is the entry point,Before opening the Postman.
 - Here the TenantBackendApplication.java which act as the entry point (the main     class).  
 - The TenantBackendApplication.java file path :              (D:\TenantProject\TenantTrack\tenant-backend\src\main\java\com\tenanttrack\tenant_backend\TenantBackendApplication.java) is the entry point for the app.  
 
-## (B) -->
+## 5.1-(B)
 
 Open Postman, Create a new request in our TenantTrack workspace.
 
@@ -414,12 +416,12 @@ Add @SpringBootApplication(exclude = {SecurityAutoConfiguration.class}):
 
 ```
 
-## (C) -->
+## 5.1-(C)
 
  Restart Spring Boot App: In VS Code terminal at D:\TenantProject\TenantTrack\tenant-backend, then run:
           mvn spring-boot:run
 
-## (D) -->
+## 5.1-(D)
 
 Now again Retry the GET request in Postman :
 
@@ -442,17 +444,21 @@ Output in the Response body : [] (empty array (or) we can say empty list  since 
           }
 
       ```
-         -Finally click on Send.
+         - Once done then click on Send button.
+         - Output in Response body : A default id will be generated associated with   the given fields.
          
-         Output : A defult id will be generated associated with the given fields.
-                   {
-                     "id": "682b397078f66a3fda161d1a",
-                     "name": "Faisal",
-                     "phone": "9876543210",
-                     "doj": null,
-                     "roomNumber": "101",
-                     "rent": 5000.0
-                  }
+    ```Json
+
+     {
+        "id": "682b397078f66a3fda161d1a",
+        "name": "Faisal",
+        "phone": "9876543210",
+        "doj": null,
+        "roomNumber": "101",
+        "rent": 5000.0
+     }
+
+    ```
 
 ## Step 5.3 :  Now again Retest the GET request in Postman : ✅
 
@@ -460,9 +466,9 @@ GET [http://localhost:8080/api/tenants] and then click on Send button.
 
 Output in Respose body: [{"id":"682b397078f66a3fda161d1a","name":"Faisal","phone":"9876543210","doj":null,"roomNumber":"101","rent":5000.0}]
 
-## Step 5.4 : Updating README.md file and pushing the changes into our github TenantTrack Repo -->
+## Step 5.4 : Updating README.md file and pushing the changes into our github TenantTrack Repo
 
-## Day 3 tasks short summmary :🚀
+### Day 3 tasks short summmary :🚀
 
    **1. Set Up Spring Boot Project.**✅
    **2. Run MongoDB in Docker.**✅
@@ -472,11 +478,14 @@ Output in Respose body: [{"id":"682b397078f66a3fda161d1a","name":"Faisal","phone
    **6. Update the README.md and**✅
    **7. Finally add, commit and push the changes to GitHub TenantTrack repository.**✅
 
-- Finally Updating the README.md file and then pushing the changes into our github  
-   MohemmadShaik/TenantTrack repository.  
+- **Finally Updating the README.md file and then pushing the changes into our github  MohemmadShaik/TenantTrack repository.**  
+
+ ```bash
 
     PS D:\TenantProject\TenantTrack\tenant-backend> git add .
     PS D:\TenantProject\TenantTrack\tenant-backend> git commit -m "Day 3 : Successfully configured Java backend with Spring Boot, MongoDB integration and updated the completed tasks status of Day 3 in short summary."
     PS D:\TenantProject\TenantTrack\tenant-backend> git push origin main
+
+  ```
 
 # ✅ Day 3 Status : Task completed successfully
