@@ -146,7 +146,7 @@ Language: Java
 Spring Boot: 3.4.5 or latest (For TenantTrack Project we used 3.4.5 stabled version)
 Group: com.tenanttrack  
 Artifact: tenant-backend  
-Dependencies
+Dependencies  
 Spring Web  
 Spring Data MongoDB  
 Lombok  
