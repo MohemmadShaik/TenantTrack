@@ -107,20 +107,22 @@ A project to manage tenant data using a modern tech stack.
 ## [Day 1 Action Plan](./DAILY_PROGRESS.md#day-1-task-update)
 
 **Goal:** Install and verify OpenJDK 17, Maven, and VS Code to set up your development environment for TenantTrack.
-**Outcome:** Tools installed, verified, and ready for Java and Spring Boot development.
-**Issues Found: 0**
+**Outcome:** Tools installed, verified, and ready for Java and Spring Boot development.  
+
+**Issues Found: 0**  
 **Issues Resolved: 0**
 
-# ✅ Day 1 Status : Task completed successfully
+# ✅ Day 1 : Task completed successfully
 
 ## [Day 2 Action Plan](./DAILY_PROGRESS.md#day-2-task-update)
 
 **Goal:** Install and verify Docker Desktop, Git, and Postman to complete your development environment setup for TenantTrack project.
 **Outcome:** Docker running containers, Git ready for version control, Postman set up for API testing.
-**Issues Found: 1** - Missing docker-desktop-data in wsl --list --verbose.
-**[Issues Resolved: 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-2-task-issue)**
 
-# ✅ Day 2 Status : Task completed successfully
+**Issues Found: 1** - Missing docker-desktop-data in wsl --list --verbose.  
+**[Issues Resolved: 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-2-task-issue)**  
+
+# ✅ Day 2 : Task completed successfully
 
 ## [Day 3 Action Plan](./DAILY_PROGRESS.md#day-3-update)
 
@@ -134,16 +136,16 @@ A project to manage tenant data using a modern tech stack.
   5. Test and Commit : Test APIs with Postman, commit changes to GitHub (git add ., git commit -m "Day 3 backend setup", git     push).
 
   **Issues Found: 1** - 401 Unauthorized, The request is unauthenticated.
-  **[Issues Resolved: 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-3-task-issue)**
+  **[Issues Resolved: 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-3-task-issue)**  
 
-# ✅ Day 3 Status : Task completed successfully
+# ✅ Day 3 : Task completed successfully
 
-## Day 4 Action Plan (Start Evening, May 20)
+## Day 4 Action Plan  
 
-Tasks:
+**Tasks:**  
 1.Configure Spring Security (2 hours): Add basic authentication (username/password) for API endpoints.
 2.Enhance API (1 hour): Add endpoints for updating (PUT /api/tenants/{id}) and deleting (DELETE /api/tenants/{id}).
-3.Start React Frontend (2 hours): Set up a React app, create a basic UI to display tenants.
+3.Start React Frontend (2 hours): Set up a React app, create a basic UI to display tenants.  
 
 **Issues Found: 0**
 **Issues Resolved: 0**
@@ -152,9 +154,9 @@ Tasks:
 
 # Daywise Achievements💡
 
-Day 1: Environment setup.
-Day 2: Spring Boot + MongoDB integration.
-Day 3: CRUD APIs + Postman testing.
+Day 1: Environment setup.  
+Day 2: Spring Boot + MongoDB integration.  
+Day 3: CRUD APIs + Postman testing.  
 
 ## **Why This Works?**
 
