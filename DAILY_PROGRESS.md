@@ -1,6 +1,5 @@
-# Daily Progress of the Action Plan
 
-## TenantTrack Daily Tasks & Progress Overview 📈
+# TenantTrack Daily Tasks & Progress Overview 📈
 
 ## Day 1 Task Update
 

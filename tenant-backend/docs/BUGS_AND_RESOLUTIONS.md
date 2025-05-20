@@ -1,5 +1,5 @@
 
-# TenantTrack - Bugs & Resolutions Log
+# TenantTrack - Bugs & Resolutions Log ⏳
 
 ## Day 2 : Docker Setup
 
