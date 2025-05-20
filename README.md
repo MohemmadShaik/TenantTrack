@@ -106,28 +106,30 @@ A project to manage tenant data using a modern tech stack.
 
 ## [Day 1 Action Plan](./DAILY_PROGRESS.md#day-1-task-update)
 
-**Goal:** Install and verify OpenJDK 17, Maven, and VS Code to set up your development environment for TenantTrack.
-**Outcome:** Tools installed, verified, and ready for Java and Spring Boot development.  
+**Goal :** Install and verify OpenJDK 17, Maven, and VS Code to set up your development environment for TenantTrack.  
+**Outcome :** Tools installed, verified, and ready for Java and Spring Boot development.  
 
-**Issues Found: 0**  
-**Issues Resolved: 0**
+**Issues Found : 0**  
+**Issues Resolved : 0**
 
 # ✅ Day 1 : Task completed successfully
 
 ## [Day 2 Action Plan](./DAILY_PROGRESS.md#day-2-task-update)
 
-**Goal:** Install and verify Docker Desktop, Git, and Postman to complete your development environment setup for TenantTrack project.
-**Outcome:** Docker running containers, Git ready for version control, Postman set up for API testing.
+**Goal :** Install and verify Docker Desktop, Git, and Postman to complete your development environment setup for TenantTrack project.  
+**Outcome :** Docker running containers, Git ready for version control, Postman set up for API testing.
 
 **[Issues Found : 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-2-task-issue)**  
+
     Missing docker-desktop-data in wsl  
+
 **[Issues Resolved : 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-2-task-issue)**  
 
 # ✅ Day 2 : Task completed successfully
 
 ## [Day 3 Action Plan](./DAILY_PROGRESS.md#day-3-update)
 
-**Goal :** Set up Java backend with Spring Boot and MongoDB integration.
+**Goal :** Set up Java backend with Spring Boot and MongoDB integration.  
 **Tasks :**
 
   1. Set Up Spring Boot Project : Use Spring Initializr [https://start.spring.io], select Java 17, Maven, add Spring Web, Spring Data MongoDB, and Spring Security. Download, unzip, open in VS Code.
@@ -136,7 +138,8 @@ A project to manage tenant data using a modern tech stack.
   4. Create Basic API : Build a REST controller with endpoints (GET /tenants, POST /tenants) to list and add tenants.
   5. Test and Commit : Test APIs with Postman, commit changes to GitHub (git add ., git commit -m "Day 3 backend setup", git     push).
 
-  **[Issues Found : 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-3-task-issue)**  
+  **[Issues Found : 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-3-task-issue)**
+  
      401 Unauthorized, The request is unauthenticated.  
 
   **[Issues Resolved : 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-3-task-issue)**  
@@ -150,8 +153,8 @@ A project to manage tenant data using a modern tech stack.
 2.Enhance API (1 hour): Add endpoints for updating (PUT /api/tenants/{id}) and deleting (DELETE /api/tenants/{id}).
 3.Start React Frontend (2 hours): Set up a React app, create a basic UI to display tenants.  
 
-**Issues Found: 0**  
-**Issues Resolved: 0**
+**Issues Found : 0**  
+**Issues Resolved : 0**
 
 +++++++++<>----<><>+++++++++<>-------<>++++++++++++<>----<><>+++++++++<>-------<>++++++++++++
 
