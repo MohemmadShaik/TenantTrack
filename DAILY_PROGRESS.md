@@ -1,4 +1,4 @@
-# **(Daily Action Plan Tasks and Progress log)**
+# Daily Progress of the Action Plan
 
 ## TenantTrack Daily Tasks & Progress Overview 📈
 
