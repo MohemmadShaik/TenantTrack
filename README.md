@@ -119,8 +119,9 @@ A project to manage tenant data using a modern tech stack.
 **Goal:** Install and verify Docker Desktop, Git, and Postman to complete your development environment setup for TenantTrack project.
 **Outcome:** Docker running containers, Git ready for version control, Postman set up for API testing.
 
-**[Issues Found: 1 -](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-2-task-issue)** Missing docker-desktop-data in wsl  
-**[Issues Resolved: 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-2-task-issue)**  
+**[Issues Found : 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-2-task-issue)**  
+    Missing docker-desktop-data in wsl  
+**[Issues Resolved : 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-2-task-issue)**  
 
 # ✅ Day 2 : Task completed successfully
 
@@ -135,9 +136,10 @@ A project to manage tenant data using a modern tech stack.
   4. Create Basic API : Build a REST controller with endpoints (GET /tenants, POST /tenants) to list and add tenants.
   5. Test and Commit : Test APIs with Postman, commit changes to GitHub (git add ., git commit -m "Day 3 backend setup", git     push).
 
-  **[Issues Found: 1 -](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-3-task-issue)** 401 Unauthorized, The request is unauthenticated.  
+  **[Issues Found : 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-3-task-issue)**  
+     401 Unauthorized, The request is unauthenticated.  
 
-  **[Issues Resolved: 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-3-task-issue)**  
+  **[Issues Resolved : 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-3-task-issue)**  
 
 # ✅ Day 3 : Task completed successfully
 
@@ -148,7 +150,7 @@ A project to manage tenant data using a modern tech stack.
 2.Enhance API (1 hour): Add endpoints for updating (PUT /api/tenants/{id}) and deleting (DELETE /api/tenants/{id}).
 3.Start React Frontend (2 hours): Set up a React app, create a basic UI to display tenants.  
 
-**Issues Found: 0**
+**Issues Found: 0**  
 **Issues Resolved: 0**
 
 +++++++++<>----<><>+++++++++<>-------<>++++++++++++<>----<><>+++++++++<>-------<>++++++++++++
