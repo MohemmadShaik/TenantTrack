@@ -1,40 +1,33 @@
 
-# **(+ Error log with screenshots)**
+# TenantTrack - Bugs & Resolutions Log
 
----
+## Day 2 : Docker Setup
 
-## Day 2: Docker Setup
+### Issue 1 : Missing `docker-desktop-data` in WSL
 
-### Issue 1: Missing `docker-desktop-data` in WSL
+**Cause :** Corrupted Docker WSL distribution. 
 
-**Cause**: Corrupted Docker WSL distribution. 
-
-**Resolution**:  
+**Resolution :**  
 
 1. Reinstalled Docker Desktop.  
 2. Moved disk image to `D:\DockerData\DockerDesktopWSL`.  
 3. Verified with `wsl --list --verbose`.  
   
   ---
-  ---
 
-## Day 3: Spring Security 401 Error
+## Day 3 : Spring Security 401 Error
 
-### Issue 2: Unauthorized API Access
+### Issue 2 : Unauthorized API Access  
 
-**Symptom :**  
-
-    ```json
         HTTP 401 - "Unauthorized" in Postman
-    ```
+    
 **Cause :** Spring Security auto-enabled blocking APIs.
 
-**Resolution :**
+**Resolution :**  
+
  -Temporarily disabled via @SpringBootApplication(exclude = {SecurityAutoConfiguration.class}).
 
  -Later added proper auth (Basic/JWT).
-
-       ```Java
 
             package com.tenanttrack.tenant_backend;
 
@@ -53,6 +46,4 @@
 
             }
 
-        ```
----
----
+ ---

@@ -148,7 +148,7 @@ A project to manage tenant data using a modern tech stack.
 
 ## Day 4 Action Plan  
 
-**Tasks:**  
+**Tasks :**  
 1.Configure Spring Security (2 hours): Add basic authentication (username/password) for API endpoints.
 2.Enhance API (1 hour): Add endpoints for updating (PUT /api/tenants/{id}) and deleting (DELETE /api/tenants/{id}).
 3.Start React Frontend (2 hours): Set up a React app, create a basic UI to display tenants.  
