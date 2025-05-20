@@ -104,7 +104,7 @@ A project to manage tenant data using a modern tech stack.
 
 # TenentTrack Action Plans 🗓️
 
-# [Day 1 Action Plan](./DAILY_PROGRESS.md#day-1-task-update)
+## [Day 1 Action Plan](./DAILY_PROGRESS.md#day-1-task-update)
 
 **Goal:** Install and verify OpenJDK 17, Maven, and VS Code to set up your development environment for TenantTrack.
 **Outcome:** Tools installed, verified, and ready for Java and Spring Boot development.
