@@ -4,7 +4,7 @@ Welcome to the **Interview Prep Quiz** section of **TenantTrack**. This document
 
 ---
 
-##  Docker and Containerization 🐳
+## Docker and Containerization 🐳
 
 **Q1: What is the purpose of Docker Desktop in TenantTrack?**  
 👉 **A:** Docker Desktop runs and manages containers, allowing TenantTrack to use MongoDB in a containerized environment for consistent development and deployment.
@@ -26,7 +26,7 @@ Welcome to the **Interview Prep Quiz** section of **TenantTrack**. This document
 
 ---
 
-##  Backend Technologies ⚙️
+## Backend Technologies ⚙️
 
 **Q1: How does Spring Boot benefit TenantTrack’s backend?**  
 👉 **A:**  Spring Boot simplifies Java development with auto-configuration, embedded servers, and easy integration with MongoDB for managing tenant data.
@@ -52,7 +52,6 @@ Welcome to the **Interview Prep Quiz** section of **TenantTrack**. This document
 **Q6. What is a RESTful web service and how does Spring Boot help build it?**
 👉 **A:** RESTful services use HTTP methods to perform CRUD operations. Spring Boot simplifies it using annotations like @RestController, @GetMapping, @PostMapping, etc.
 
-
 ---
 
 ## Frontend Technologies 🌐
@@ -71,7 +70,6 @@ Welcome to the **Interview Prep Quiz** section of **TenantTrack**. This document
 
 **Q5. How would you handle user input in a React form?**
 👉 **A:** By binding input values to component state using useState() and updating state with onChange handlers.
-
 
 ---
 
@@ -95,13 +93,13 @@ Welcome to the **Interview Prep Quiz** section of **TenantTrack**. This document
 **Q6. What does the @Test annotation do in JUnit?**
 👉 **A:** It marks a method as a test method to be executed by the test runner.
 
-
 ---
 
 ## General Concepts💡
 
 **Q1: What is the difference between JDK, JRE, and JVM?**  
 👉 **A:**  
+
 - **JDK**: Java Development Kit — contains tools needed to develop Java programs.  
 - **JRE**: Java Runtime Environment — provides libraries to run Java programs.  
 - **JVM**: Java Virtual Machine — part of JRE that actually runs the bytecode.
@@ -123,6 +121,5 @@ Q6. What is the role of an IDE like VS Code in software development?**
 
 Q7. How would you explain CI/CD in simple terms?**
 👉 **A:** CI (Continuous Integration) means automatically testing code on every commit. CD (Continuous Deployment/Delivery) means deploying code automatically after successful tests.
-
 
 ---
