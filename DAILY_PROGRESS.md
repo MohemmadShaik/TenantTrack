@@ -629,10 +629,11 @@ The Spring Boot app (version 3.4.5) is running smoothly with no issues,And all c
 
 ===<>=====<>=======<>===<>=====<>=======<>===<>=====<>=======<>===<>=====<>=======<>
 
-**- D4.1.1.Add Spring Security Dependency :**  
+**D4.1.1.Add Spring Security Dependency :**  
 
-Ensure pom.xml includes Spring Security (already added in Day 3).
-Verify in [D:\TenantProject\TenantTrack\tenant-backend\pom.xml](./tenant-backend/docs/screenshots/Day4-1.1%20Confirming%20Spring%20Security%20enabled.png)
+Ensure pom.xml includes Spring Security (already added in Day 3).  
+
+Verify in [D4.1.1 SCREENSHOT](./tenant-backend/docs/screenshots/Day4-1.1%20Confirming%20Spring%20Security%20enabled.png)
   
       ```xml
          <dependency>
@@ -641,7 +642,8 @@ Verify in [D:\TenantProject\TenantTrack\tenant-backend\pom.xml](./tenant-backend
         </dependency>
       ```
 
-**- D4.1.2.Remove Temporary Exclusion :**
+**D4.1.2.Remove Temporary Exclusion :**  
+
 In TenantBackendApplication.java, remove exclude = {SecurityAutoConfiguration.class} to enable Spring Security:
 
       ```Java
@@ -659,10 +661,12 @@ In TenantBackendApplication.java, remove exclude = {SecurityAutoConfiguration.cl
 
       ```
 
-**- D4.1.3.Configure Security :**
-Create SecurityConfig.java in  D:\TenantProject\TenantTrack\tenant-backend\src\main\java\com\tenanttrack\tenant_backend\config:
+**- D4.1.3.Configure Security :**  
 
-    ~~~SecurityConfig.java
+Create SecurityConfig.java in  
+D:\TenantProject\TenantTrack\tenant-backend\src\main\java\com\tenanttrack\tenant_backend\config:
+
+    ```SecurityConfig.java
 
     package com.tenanttrack.tenant_backend.config;
 
@@ -700,7 +704,7 @@ var user = User.~~withDefaultPasswordEncoder~~()
                 return new InMemoryUserDetailsManager(user);
             }
         }
-    ~~~
+    ```
 
  [D4.1.3 ISSUE SCREENSHOT](./tenant-backend/docs/screenshots/D4.1.3%20STRIKED%20LINES_pic1.png)
 
@@ -712,7 +716,7 @@ var user = User.~~withDefaultPasswordEncoder~~()
 
 **[D4.1.3 Issue-1 Analysis :](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#d413-issue-1--deprecated-withdefaultpasswordencoder-and-cors-configuration-in-securityconfigjava)**
 
-## certain lines appear to be "striked" (likely indicating they are problematic or deprecated)**
+## certain lines appear to be "striked" (likely indicating they are problematic or deprecated)
 
 ### Updated SecurityConfig.java
 
@@ -833,16 +837,22 @@ The key details from the error are:
 **- Location of Logs:** D:\TenantProject\TenantTrack\tenant-backend\target\surefire-reports  
 
 - Let's try to open TenantBackendApplicationTests.txt available in  
-  D:\TenantProject\TenantTrack\tenant-backend\target\surefire-reports  
-- See for "caused by" for the error occured.  
-- The stack trace reveals that the IllegalStateException: Failed to load ApplicationContext is caused  
-  by a Spring Security configuration issue.  
+  D:\TenantProject\TenantTrack\tenant-backend\target\surefire-reports
+
+- See for "caused by" for the error occured.
+
+- The stack trace reveals that the IllegalStateException: Failed to load ApplicationContext is
+  caused by a Spring Security configuration issue.
+  
   Specifically, the error stems from a BasicAuthenticationEntryPoint bean in your SecurityConfig clas  where the realmName property is not specified,  
-  leading to an IllegalArgumentException: realmName must be specified.  
-- This issue likely arises because you started implementing Spring Security on Day 4 (as per th  README.md  
-  Day 4 Action Plan: "Configure Spring Security (2 hours): Add basic authenticatio  (username/password) for  
-  API endpoints"). However, the BasicAuthenticationEntryPoint configuration i  incomplete, causing the test  
-  (TenantBackendApplicationTests.contextLoads) to fail when attempting t  load the application context during mvn clean install.  
+  leading to an IllegalArgumentException: realmName must be specified.
+
+- This issue likely arises because you started implementing Spring Security on Day 4 (as per  
+  the  README.md Day 4 Action Plan: "Configure Spring Security (2 hours): Add basic authentication (username/password) for  
+  API endpoints").
+
+- However, the BasicAuthenticationEntryPoint configuration is  incomplete, causing the test  
+  (TenantBackendApplicationTests.contextLoads) to fail when attempting to  load the application context during mvn clean install.  
 
 ### Error Analysis  
 
@@ -855,14 +865,15 @@ The key details from the error are:
 
 **KEY NOTE :**
 
-- The BasicAuthenticationEntryPoint is part of Spring Security’s HTTP Basic Authentication setup.  
-- Spring Security requires the realmName property to be set for this component, which identifies the     
-  authentication realm (a string sent in the WWW-Authenticate header to indicate the protected area).  
+- The BasicAuthenticationEntryPoint is part of Spring Security’s HTTP Basic Authentication setup.
+
+- Spring Security requires the realmName property to be set for this component, which identifies the authentication realm (a string sent in the WWW-Authenticate header to indicate the protected area).
+
 - Since it’s not set in your SecurityConfig, the application context fails to initialize.  
 
-**Q) How to set realmName property in your SecurityConfig?**
-**Sol :** Open the SecurityConfig.java file and Set the missing realmName property for  
-          BasicAuthenticationEntryPoint.
+**Q) How to set realmName property in your SecurityConfig?**  
+**Sol :** Open the SecurityConfig.java file and Set the missing realmName property for
+          BasicAuthenticationEntryPoint.  
 
     ~~~SecurityConfig.java
 
@@ -875,10 +886,11 @@ The key details from the error are:
 
 **Explanation:**  
 
-- The setRealmName method specifies the authentication realm, which is required for    BasicAuthenticationEntryPoint.  
+- The setRealmName method specifies the authentication realm, which is required for
+  BasicAuthenticationEntryPoint.  
 - "TenantTrackRealm" is an arbitrary name but should be meaningful to your application.  
 
-        ~~~SecurityConfig.java 
+        ```SecurityConfig.java 
         
             package com.tenanttrack.tenant_backend.config;
 
@@ -941,7 +953,7 @@ The key details from the error are:
                     return source;
                 }
             }
-      ~~~
+      ```
 
 - Test with Postman :  
 
@@ -961,24 +973,26 @@ The key details from the error are:
         - Authentication: Basic Auth (admin/password)  
         - Body (JSON):  
 
-                 ~~~json
+                 ```json
                     {
                         "roomNumber": "102",
                         "name": "Amit Sharma",
                         "phone": "9123456789",
                         "rent": 6000
                     }
-                 ~~~
+                 ```
      [postman POST Response Screenshot](./tenant-backend/docs/screenshots/D4.1.4%20%20Postman%20POST%20Request%20Outcome_pic.png)
 
-<~>=======<~>===**TASK DAY 4.1 : Configure Spring Security COMPLETED**===<~>=======<~>  
+<*>=======<*>===**TASK DAY 4.1 : Configure Spring Security COMPLETED**===<*>=======<*>
++++++++++<>----<><>+++++++++<>-------<>++++++++++++<>----<><>+++++++++<>-------<>++++++++++++
 
     1. Located and fixed SecurityConfig by setting the realmName property for       
        BasicAuthenticationEntryPoint, and  Updated the SecurityConfig.java   
     
-    2. Added User Authentication by modifying the SecurityConfig.java to include an in-memory user for  
-       testing purposes  :  
+    2. Added User Authentication by modifying the SecurityConfig.java to include an in-memory user for testing purposes  :  
     
+    ```SecurityConfig.java
+
          @Bean
          public UserDetailsService userDetailsService(PasswordEncoder passwordEncoder) {
             var user = User.builder()
@@ -995,9 +1009,11 @@ The key details from the error are:
         public PasswordEncoder passwordEncoder() {
             return new BCryptPasswordEncoder();
         }
+    ```
 
     3. Updated TenantBackendApplicationTests.java using Mock Security Context to test with security enabled.
 
+    ```TenantBackendApplicationTests.java
         package com.tenanttrack.tenant_backend;     
         import org.junit.jupiter.api.Test;
         import org.springframework.boot.test.context.SpringBootTest;
@@ -1012,18 +1028,17 @@ The key details from the error are:
             void contextLoads() {
             }
         }
-    
+    ```
   4. Verified spring-security-test is in pom.xml
   
-    ~~~pom.xml
+    ```pom.xml
 
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-test</artifactId>
             <scope>test</scope>
         </dependency>
-
-    ~~~
+    ```
 
   5. Verified MongoDB Connection using
   
@@ -1064,8 +1079,8 @@ The key details from the error are:
   7. Testing the connection manually using the below command in the Powershell terminal path :  
      D:\TenantProject\TenantTrack\tenant-backend> mvn spring-boot:run  
 
-         Output :  
-        ========  
+        Output :
+        ======
             2025-06-01T21:01:04.776+05:30  INFO 26540 --- [tenant-backend] [localhost:27017] org.mongodb.driver.cluster : Monitor thread successfully connected
             to server with description ServerDescription{address=localhost:27017, type=STANDALONE, cryptd=false, state=CONNECTED, ok=true,
             minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=22423400,

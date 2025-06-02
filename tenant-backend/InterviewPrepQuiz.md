@@ -122,116 +122,116 @@ Q6. What is the role of an IDE like VS Code in software development?**
 Q7. How would you explain CI/CD in simple terms?**
 👉 **A:** CI (Continuous Integration) means automatically testing code on every commit. CD (Continuous Deployment/Delivery) means deploying code automatically after successful tests.
 
----
++++++++++<>----<><>+++++++++<>-------<>++++++++++++<>----<><>+++++++++<>-------<>++++++++++++
 
 **Day 4 Q&A Quiz**  
 
-1.What is the purpose of @EnableWebSecurity in SecurityConfig.java?
-A) Enables CSRF protection
-B) Activates Spring Security for the application
-C) Configures MongoDB connections
-D) Enables CORS for React
-Answer: B) Activates Spring Security for the application
+1.What is the purpose of @EnableWebSecurity in SecurityConfig.java?  
+A) Enables CSRF protection  
+B) Activates Spring Security for the application  
+C) Configures MongoDB connections  
+D) Enables CORS for React  
+Answer: B) Activates Spring Security for the application  
 
-2.Why do we use InMemoryUserDetailsManager in this setup?
-A) To store users in MongoDB
-B) To provide temporary user credentials for testing
-C) To enable JWT authentication
+2.Why do we use InMemoryUserDetailsManager in this setup?  
+A) To store users in MongoDB  
+B) To provide temporary user credentials for testing  
+C) To enable JWT authentication  
 D) To disable security  
-Answer: B) To provide temporary user credentials for testing
+Answer: B) To provide temporary user credentials for testing  
 
-3.What does @CrossOrigin do in TenantController.java?
-A) Secures APIs
-B) Allows requests from different origins (e.g., React at localhost:3000)
-C) Validates JSON input
+3.What does @CrossOrigin do in TenantController.java?  
+A) Secures APIs  
+B) Allows requests from different origins (e.g., React at localhost:3000)  
+C) Validates JSON input  
 D) Enables HTTPS  
-Answer: B) Allows requests from different origins
+Answer: B) Allows requests from different origins  
 
-4.What HTTP status code should a successful DELETE request return?
-A) 200 OK
-B) 201 Created
-C) 204 No Content
+4.What HTTP status code should a successful DELETE request return?  
+A) 200 OK  
+B) 201 Created  
+C) 204 No Content  
 D) 401 Unauthorized  
-Answer: C) 204 No Content
+Answer: C) 204 No Content  
 
-5.In React, what is the purpose of useEffect in TenantList.jsx?
-A) To handle form submissions
-B) To fetch data when the component mounts
-C) To style the component
+5.In React, what is the purpose of useEffect in TenantList.jsx?  
+A) To handle form submissions  
+B) To fetch data when the component mounts  
+C) To style the component  
 D) To manage state updates  
-Answer: B) To fetch data when the component mounts
+Answer: B) To fetch data when the component mounts  
 
 **Challenge Question:** If the React app fails to fetch tenants due to a CORS error, what are two potential fixes in the backend? (Hint: Check SecurityConfig.java and TenantController.java.)
 
-6.What does .csrf().disable() do in SecurityConfig.java?
-A) Enables CSRF protection
-B) Disables CSRF protection for testing
-C) Enables JWT authentication
-D) Disables CORS
-Answer: B) Disables CSRF protection for testing
+6.What does .csrf().disable() do in SecurityConfig.java?  
+A) Enables CSRF protection  
+B) Disables CSRF protection for testing  
+C) Enables JWT authentication  
+D) Disables CORS  
+Answer: B) Disables CSRF protection for testing  
 
-7.What is the role of InMemoryUserDetailsManager in the provided code?
-A) Stores user credentials in MongoDB
-B) Manages in-memory user credentials for authentication
-C) Configures CORS policies
+7.What is the role of InMemoryUserDetailsManager in the provided code?  
+A) Stores user credentials in MongoDB  
+B) Manages in-memory user credentials for authentication  
+C) Configures CORS policies  
 D) Handles API routing  
-Answer: B) Manages in-memory user credentials for authentication
+Answer: B) Manages in-memory user credentials for authentication  
 
-8.Why is .httpBasic() used in the SecurityFilterChain?
-A) To enable OAuth2
-B) To enable username/password authentication
-C) To disable authentication
+8.Why is .httpBasic() used in the SecurityFilterChain?  
+A) To enable OAuth2  
+B) To enable username/password authentication  
+C) To disable authentication  
 D) To enable session management  
-Answer: B) To enable username/password authentication
+Answer: B) To enable username/password authentication  
 
-9.What happens if you remove .cors() from SecurityConfig.java?
-A) APIs become unauthenticated
-B) React frontend may fail to connect due to CORS errors
-C) CSRF protection is enabled
+9.What happens if you remove .cors() from SecurityConfig.java?  
+A) APIs become unauthenticated  
+B) React frontend may fail to connect due to CORS errors  
+C) CSRF protection is enabled  
 D) MongoDB connection fails  
-Answer: B) React frontend may fail to connect due to CORS errors
+Answer: B) React frontend may fail to connect due to CORS errors  
 
-10.How do you test Basic Auth in Postman?
-A) Add a Bearer token
-B) Set username/password in the Authorization tab
-C) Disable authentication
+10.How do you test Basic Auth in Postman?  
+A) Add a Bearer token  
+B) Set username/password in the Authorization tab  
+C) Disable authentication  
 D) Use a query parameter  
-Answer: B) Set username/password in the Authorization tab
+Answer: B) Set username/password in the Authorization tab  
 
 **Challenge Question:** If Postman returns a 403 Forbidden error instead of 401 Unauthorized, what might be the issue, and how would you debug it?
 
-11.Why was User.withDefaultPasswordEncoder() replaced with BCryptPasswordEncoder?
-A) It’s faster
-B) It’s deprecated and less secure
-C) It supports JWT
+11.Why was User.withDefaultPasswordEncoder() replaced with BCryptPasswordEncoder?  
+A) It’s faster  
+B) It’s deprecated and less secure  
+C) It supports JWT  
 D) It enables CSRF  
-Answer: B) It’s deprecated and less secure
+Answer: B) It’s deprecated and less secure  
 
-12.What does .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) do?
-A) Enables session storage
-B) Makes the API stateless for REST
-C) Disables authentication
+12.What does .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) do?  
+A) Enables session storage  
+B) Makes the API stateless for REST  
+C) Disables authentication  
 D) Enables CORS  
-Answer: B) Makes the API stateless for REST
+Answer: B) Makes the API stateless for REST  
 
-13.What is the purpose of corsConfigurationSource() in the updated code?
-A) Secures APIs
-B) Configures MongoDB connections
-C) Allows React frontend to access APIs
+13.What is the purpose of corsConfigurationSource() in the updated code?  
+A) Secures APIs  
+B) Configures MongoDB connections  
+C) Allows React frontend to access APIs  
 D) Disables CSRF  
-Answer: C) Allows React frontend to access APIs
+Answer: C) Allows React frontend to access APIs  
 
-14.What HTTP status code indicates an authentication failure?
-A) 200 OK
-B) 401 Unauthorized
-C) 403 Forbidden
+14.What HTTP status code indicates an authentication failure?  
+A) 200 OK  
+B) 401 Unauthorized  
+C) 403 Forbidden  
 D) 404 Not Found  
-Answer: B) 401 Unauthorized
+Answer: B) 401 Unauthorized  
 
-15.How does .httpBasic() contribute to security in this setup?
-A) Enables OAuth2
-B) Requires username/password for API access
-C) Encrypts API responses
+15.How does .httpBasic() contribute to security in this setup?  
+A) Enables OAuth2  
+B) Requires username/password for API access  
+C) Encrypts API responses  
 D) Disables CORS  
 Answer: B) Requires username/password for API access  
 

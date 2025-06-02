@@ -216,7 +216,7 @@ Day 1: Environment setup.
 Day 2: Spring Boot + MongoDB integration.  
 Day 3: CRUD APIs + Postman testing.  
 Day 4: Spring Security, Securing APIs & Enhance CRUD APIs , React setup and Expanding TenantTrack
-       Functionality'
+       Functionality'.
 
 ## **Why This Works?**
 
@@ -238,8 +238,7 @@ Day 4: Spring Security, Securing APIs & Enhance CRUD APIs , React setup and Expa
 4. **VS HTML to CSS by Neptune Design :** It generates CSS classes from HTML structure.  
                                       Step 1: Create HTML page first and select all and press Ctrl + Shift + p to open the command Palette, which is a powerful tool for accessing various commands, settings, and features.  
                                      - Now select HTML to CSS: Generate  
-
-                                      Step 2:and now go to CSS file and press ctrl + v    
+                                      Step 2:and now go to CSS file and press ctrl + v
 
 5. **Auto Rename Tag by Jun Han :** It's whenever we Rename a Tag the corresponding opening and closing Tag automatically  adjusts its name to match the new tag.  
 
