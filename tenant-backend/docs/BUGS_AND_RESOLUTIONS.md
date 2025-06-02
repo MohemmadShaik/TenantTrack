@@ -50,9 +50,9 @@
 
  ---
 
-## D4.1.3 Issue-1 : Deprecated `withDefaultPasswordEncoder` and CORS Configuration in SecurityConfig.java
+## D4.1.3 ISSUE-1 : Deprecated `withDefaultPasswordEncoder` and CORS Configuration in SecurityConfig.java
 
-**Issue**:  [D4.1.3 ISSUE SCREENSHOT](./screenshots/D4.1.3%20STRIKED%20LINES_pic1.png)
+**Issue**:  [D4.1.3 ISSUE-1 SCREENSHOT](./screenshots/D4.1.3%20STRIKED%20LINES_pic1.png)
 Striked lines in `SecurityConfig.java` (`httpBasic`, `csrf`, `cors`, `withDefaultPasswordEncoder`) indicated deprecation or misconfiguration.  
 
 **Cause**:  
@@ -66,7 +66,9 @@ Striked lines in `SecurityConfig.java` (`httpBasic`, `csrf`, `cors`, `withDefaul
 
 **Status**: ✅ Resolved  
 
-## D4.1.4 Issue-2 : Spring Security realmName Error  [**D4.1.4 Issue-2 SCREENSHOT Error :**](./screenshots/D4.1.4%20Refresh%20the%20dependencies%20cmd%20Error.png)
+## D4.1.4 ISSUE-2 : Spring Security realmName Error
+
+[**D4.1.4 ISSUE-2 SCREENSHOT**](./screenshots/D4.1.4%20Refresh%20the%20dependencies%20cmd%20Error.png)
 
 ### Failed to load ApplicationContext due to missing realmName in BasicAuthenticationEntryPoint
 
@@ -95,7 +97,9 @@ Striked lines in `SecurityConfig.java` (`httpBasic`, `csrf`, `cors`, `withDefaul
 - The setRealmName method specifies the authentication realm, which is required for    BasicAuthenticationEntryPoint.  
 - "TenantTrackRealm" is an arbitrary name but should be meaningful to your application.
 
-## Day 4 : Port 8080 Conflict
+**Status**: ✅ Resolved
+
+## Day 4.1.4 : Port 8080 Conflict
 
 ### Issue 3 : Web Server Failed to Start - Port 8080 in Use
 
@@ -107,6 +111,6 @@ Striked lines in `SecurityConfig.java` (`httpBasic`, `csrf`, `cors`, `withDefaul
 2. Terminated the process with `taskkill /PID <PID> /F`.
 3. Restarted the Spring Boot application using `mvn spring-boot:run`.
 
-[SREENSHOT](./screenshots/Day%204-%20Port%208080%20in%20use%20conflict.png)
+[ISSUE-3 SCREENSHOT](./screenshots/Day%204-%20Port%208080%20in%20use%20conflict.png)
 
 **Verification**: Application started successfully, and APIs were accessible via Postman.
