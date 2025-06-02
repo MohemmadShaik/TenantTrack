@@ -178,9 +178,9 @@ D2.3. Install Postman
   **Issues Found : 3**  
   **Issues Resolved : 3**
 
-       - Implement basic authentication (username/password) for API endpoints.
-       - Use in-memory authentication for simplicity (e.g., admin:password).
-       - Secure /api/tenants endpoints to require authentication.
+- Implement basic authentication (username/password) for API endpoints.
+- Use in-memory authentication for simplicity (e.g., admin:password).
+- Secure /api/tenants endpoints to require authentication.
 
 ### D4.2. Enhance API (1 hour)  
 

@@ -983,15 +983,16 @@ The key details from the error are:
                  ```
      [postman POST Response Screenshot](./tenant-backend/docs/screenshots/D4.1.4%20%20Postman%20POST%20Request%20Outcome_pic.png)
 
-<*>=======<*>===**TASK DAY 4.1 : Configure Spring Security COMPLETED**===<*>=======<*>
+<*>=======<*>===**TASK DAY 4.1 : Configure Spring Security COMPLETED**===<*>=======<*>  
+
 +++++++++<>----<><>+++++++++<>-------<>++++++++++++<>----<><>+++++++++<>-------<>++++++++++++
 
-    1. Located and fixed SecurityConfig by setting the realmName property for       
-       BasicAuthenticationEntryPoint, and  Updated the SecurityConfig.java   
-    
-    2. Added User Authentication by modifying the SecurityConfig.java to include an in-memory user for testing purposes  :  
-    
-    ```SecurityConfig.java
+1. Located and fixed SecurityConfig by setting the realmName property for
+       BasicAuthenticationEntryPoint, and  Updated the SecurityConfig.java
+
+2. Added User Authentication by modifying the SecurityConfig.java to include an in-memory user for testing purposes  :  
+
+        ```SecurityConfig.java
 
          @Bean
          public UserDetailsService userDetailsService(PasswordEncoder passwordEncoder) {
@@ -1009,11 +1010,13 @@ The key details from the error are:
         public PasswordEncoder passwordEncoder() {
             return new BCryptPasswordEncoder();
         }
-    ```
 
-    3. Updated TenantBackendApplicationTests.java using Mock Security Context to test with security enabled.
+        ```
 
-    ```TenantBackendApplicationTests.java
+3. Updated TenantBackendApplicationTests.java using Mock Security Context to test with security enabled.
+
+        ```TenantBackendApplicationTests.java
+
         package com.tenanttrack.tenant_backend;     
         import org.junit.jupiter.api.Test;
         import org.springframework.boot.test.context.SpringBootTest;
@@ -1028,30 +1031,33 @@ The key details from the error are:
             void contextLoads() {
             }
         }
-    ```
-  4. Verified spring-security-test is in pom.xml
+
+          ```
+
+4. Verified spring-security-test is in pom.xml
   
-    ```pom.xml
+        ```pom.xml
 
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-test</artifactId>
             <scope>test</scope>
         </dependency>
-    ```
 
-  5. Verified MongoDB Connection using
+          ```
+
+5. Verified MongoDB Connection using
   
       docker ps //which Confirm tenant-mongo is running and mapped to 0.0.0.0:27017->27017/tcp.
 
       docker start tenant-mongo //if not running try to start it  
 
- 6. Clean and Rebuild //to clear any cached artifacts and rebuild :
+6. Clean and Rebuild //to clear any cached artifacts and rebuild :
 
      mvn clean install
   
-     Output :
-     ======
+         Output :
+         ======
         [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.096 s -- in com.tenanttrack.tenant_backend.TenantBackendApplicationTests
         [INFO] 
         [INFO] Results:
@@ -1076,7 +1082,7 @@ The key details from the error are:
         [INFO] Finished at: 2025-06-01T20:50:48+05:30
         [INFO] ------------------------------------------------------------------------
 
-  7. Testing the connection manually using the below command in the Powershell terminal path :  
+7. Testing the connection manually using the below command in the Powershell terminal path :  
      D:\TenantProject\TenantTrack\tenant-backend> mvn spring-boot:run  
 
         Output :
@@ -1090,8 +1096,8 @@ The key details from the error are:
             2025-06-02T09:24:40.967+05:30  INFO 25808 --- [tenant-backend] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
             2025-06-02T09:24:40.975+05:30  INFO 25808 --- [tenant-backend] [  restartedMain] c.t.t.TenantBackendApplication           : Started TenantBackendApplication in 3.026 seconds (process running for 3.434)  
 
- 8. Testing GET and POST request in the Postman is successful.  
- 9. Finally updating the README.md, DAILY_PROGRESS.md, BUGS_AND_RESOLUTIONS.md,
+8. Testing GET and POST request in the Postman is successful.  
+9. Finally updating the README.md, DAILY_PROGRESS.md, BUGS_AND_RESOLUTIONS.md,
     InterviewPrepQuiz.md and pushing the changes to our GitHub repository.  
 
     - Open the Bash Terminal :  
