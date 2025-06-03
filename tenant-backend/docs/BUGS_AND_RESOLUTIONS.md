@@ -5,7 +5,7 @@
 
 ### Issue 1 : Missing `docker-desktop-data` in WSL
 
-**Cause :** Corrupted Docker WSL distribution. 
+**Cause :** Corrupted Docker WSL distribution.  
 
 **Resolution :**  
 
