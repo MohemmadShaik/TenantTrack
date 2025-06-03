@@ -113,7 +113,8 @@ A project to manage tenant data using a modern tech stack.
 - D1.2. Install Maven  
 - D1.3. Install Visual Studio Code (IDE)  
 
-**<*>---<*> Issues Found : 0,   Issues Resolved : 0 <*>---<*>**  
+**Issues Found : 0**
+**Issues Resolved : 0**  
 
 **Outcome :** Tools installed, verified, and ready for Java and Spring Boot development.  
 
@@ -134,7 +135,8 @@ A project to manage tenant data using a modern tech stack.
 
 **Outcome :** Docker running containers, Git ready for version control, Postman set up for API testing.  
 
-**<*>--<*> Day 2 Over all Issues Found : 1,  Issues Resolved : 1 <*>--<*>**  
+**Issues Found : 1**  
+**Issues Resolved : 1**  
 
 ## Day 2 : Action Plan Completed Successfully. ✅
 
@@ -162,7 +164,8 @@ A project to manage tenant data using a modern tech stack.
 
   **[Issues Resolved : 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-3-task-issue)**  
 
-  **<*>--<*> Day 3 Over all Issues Found : 1, Issues Resolved : 1 <*>--<*>**  
+  **Issues Found : 1**
+  **Issues Resolved : 1**  
 
 ## Day 3 : Action Plan Completed Successfully. ✅  
 
@@ -186,13 +189,14 @@ A project to manage tenant data using a modern tech stack.
   
    **--> D4.1.4.Test Authentication [ISSUE-2 RESOLVED]** ✅  
   
-  **<*> Day4 Issue 3 RESOLVED : Web Server Failed to Start - Port 8080 in Use <*>**  
+  **Day4 Issue 3 RESOLVED : Web Server Failed to Start - Port 8080 in Use**  
 
-  **[BUGS & RESOLUTION](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-4--port-8080-conflict)**  
+  **[BUGS & RESOLUTION](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-414--port-8080-conflict)**  
 
   **[SCREENSHOT](./tenant-backend/docs/screenshots/Day%204-%20Port%208080%20in%20use%20conflict.png)**  
 
-  **<*>--<*> D4.1 Issues Found : 3,     Issues Resolved : 3 <*>--<*>**  
+  **D4.1 Issues Found : 3**
+  **D4.1 Issues Resolved : 3**  
 
 - Implement basic authentication (username/password) for API endpoints.
 - Use in-memory authentication for simplicity (e.g., admin:password).
@@ -222,7 +226,8 @@ A project to manage tenant data using a modern tech stack.
 - Basic React frontend displaying tenant list.  
 - Changes pushed to GitHub with clear commit message.  
 
-**<*>--<*> Day 4 Over all Issues Found : 3,    Issues Resolved : 3 <*>--<*>**  
+**Day 4 Over all Issues Found : 3**  
+**Day 4 Over all Issues Resolved : 3**  
 
 ## Daywise Achievements💡
 
