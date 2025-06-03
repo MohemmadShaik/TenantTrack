@@ -109,11 +109,11 @@ A project to manage tenant data using a modern tech stack.
 **Goal :** Install and verify OpenJDK 17, Maven, and VS Code to set up your development environment for TenantTrack.  
 **Task : Need to complete 3 tasks**  
 
-D1.1. Install Java17  
-D1.2. Install Maven  
-D1.3. Install Visual Studio Code (IDE)  
+- D1.1. Install Java17  
+- D1.2. Install Maven  
+- D1.3. Install Visual Studio Code (IDE)  
 
-<*>---<*>**Issues Found : 0**  **Issues Resolved : 0**<*>---<*>  
+**<*>---<*> Issues Found : 0,   Issues Resolved : 0 <*>---<*>**  
 
 **Outcome :** Tools installed, verified, and ready for Java and Spring Boot development.  
 
@@ -124,9 +124,9 @@ D1.3. Install Visual Studio Code (IDE)
 **Goal :** Install and verify Docker Desktop, Git, and Postman to complete your development environment setup for TenantTrack project.  
 **Task : Need to complete 3 tasks**
 
-D2.1. Install Docker  
-D2.2. Install GIT Version Controller  
-D2.3. Install Postman  
+- D2.1. Install Docker  
+- D2.2. Install GIT Version Controller  
+- D2.3. Install Postman  
 
 **[Issues Found : 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-2-task-issue)** Missing docker-desktop-data in wsl  
 
@@ -134,7 +134,7 @@ D2.3. Install Postman
 
 **Outcome :** Docker running containers, Git ready for version control, Postman set up for API testing.  
 
-<*>--<*>**Day 2 Over all Issues Found : 1**  **Day 4 Over all Issues Resolved : 1**<*>--<*>  
+**<*>--<*> Day 2 Over all Issues Found : 1,  Issues Resolved : 1 <*>--<*>**  
 
 ## Day 2 : Action Plan Completed Successfully. ✅
 
@@ -162,37 +162,37 @@ D2.3. Install Postman
 
   **[Issues Resolved : 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-3-task-issue)**  
 
-  <*>--<*>**Day 3 Over all Issues Found : 1, Issues Resolved : 1**<*>--<*>  
+  **<*>--<*> Day 3 Over all Issues Found : 1, Issues Resolved : 1 <*>--<*>**  
 
 ## Day 3 : Action Plan Completed Successfully. ✅  
 
 ## [Day 4 Action Plan](DAILY_PROGRESS.md#day-4-task-secure-apis--enhance-crud)  
 
-**Goal :** - Enhance the backend with Spring Security for 
-             authentication  
-           - Add update/delete API endpoints, and  
-           - initialize the React frontend for tenant  
-             management.  
+**Goal :**  
+
+- Enhance the backend with Spring Security for authentication  
+- Add update/delete API endpoints, and  
+- initialize the React frontend for tenant management.  
 
 **Tasks : Need to complete 4 tasks**  
   
 ### D4.1. Configure Spring Security (2 hours)  
 
-  --> **D4.1.1.Add Spring Security Dependency :** ✅
+   **--> D4.1.1.Add Spring Security Dependency :** ✅
 
-  --> **D4.1.2.Remove Temporary Exclusion :** ✅  
+   **--> D4.1.2.Remove Temporary Exclusion :** ✅  
 
-  --> **D4.1.3.Configure Security [ISSUE-1 RESOLVED]** ✅  
+   **--> D4.1.3.Configure Security [ISSUE-1 RESOLVED]** ✅  
   
-  --> **D4.1.4.Test Authentication [ISSUE-2 RESOLVED]** ✅  
+   **--> D4.1.4.Test Authentication [ISSUE-2 RESOLVED]** ✅  
   
-  **Day4 Issue 3 RESOLVED : Web Server Failed to Start - Port 8080 in Use**  
+  **<*> Day4 Issue 3 RESOLVED : Web Server Failed to Start - Port 8080 in Use <*>**  
 
-  [BUGS & RESOLUTION](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-4--port-8080-conflict)  
+  **[BUGS & RESOLUTION](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-4--port-8080-conflict)**  
 
-  [SCREENSHOT](./tenant-backend/docs/screenshots/Day%204-%20Port%208080%20in%20use%20conflict.png)  
+  **[SCREENSHOT](./tenant-backend/docs/screenshots/Day%204-%20Port%208080%20in%20use%20conflict.png)**  
 
-  <*>--<*>**D4.1 Issues Found : 3**  **Issues Resolved : 3**<*>--<*>  
+  **<*>--<*> D4.1 Issues Found : 3,     Issues Resolved : 3 <*>--<*>**  
 
 - Implement basic authentication (username/password) for API endpoints.
 - Use in-memory authentication for simplicity (e.g., admin:password).
@@ -206,8 +206,7 @@ D2.3. Install Postman
 ### D4.3. Start React Frontend (2 hours)  
 
 - Set up a React app using create-react-app.  
-- Create a basic UI to display a list of tenants fetched 
-  from the backend.  
+- Create a basic UI to display a list of tenants fetched from the backend.  
 
 ### D4.4. Test and Commit (1 hour)  
 
@@ -223,7 +222,7 @@ D2.3. Install Postman
 - Basic React frontend displaying tenant list.  
 - Changes pushed to GitHub with clear commit message.  
 
-<*>--<*>**Day 4 Over all Issues Found : 3, Issues Resolved : 3**<*>--<*>  
+**<*>--<*> Day 4 Over all Issues Found : 3,    Issues Resolved : 3 <*>--<*>**  
 
 ## Daywise Achievements💡
 
