@@ -168,21 +168,28 @@ D2.3. Install Postman
   
 ### D4.1. Configure Spring Security (2 hours)  
 
-  **- D4.1.1.Add Spring Security Dependency :** ✅
-  **- D4.1.2.Remove Temporary Exclusion :** ✅
-  **- D4.1.3.Configure Security [ISSUE-1 RESOLVED]:** ✅
-  **- D4.1.4.Test Authentication [ISSUE-2 RESOLVED]:** ✅
-  **-Day4 Issue 3 RESOLVED : Web Server Failed to Start - Port 8080 in Use** 
+  **D4.1.1.Add Spring Security Dependency :** ✅
+
+  **D4.1.2.Remove Temporary Exclusion :** ✅  
+
+  **D4.1.3.Configure Security [ISSUE-1 RESOLVED]:** ✅  
+  
+  **D4.1.4.Test Authentication [ISSUE-2 RESOLVED]:** ✅  
+  
+  **Day4 Issue 3 RESOLVED : Web Server Failed to Start - Port 8080 in Use**  
+
   [BUGS & RESOLUTION](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-4--port-8080-conflict)
-  [SCREENSHOT](./tenant-backend/docs/screenshots/Day%204-%20Port%208080%20in%20use%20conflict.png)
+  [SCREENSHOT](./tenant-backend/docs/screenshots/Day%204-%20Port%208080%20in%20use%20conflict.png)  
+
   **Issues Found : 3**  
-  **Issues Resolved : 3**
+
+  **Issues Resolved : 3**  
 
 - Implement basic authentication (username/password) for API endpoints.
 - Use in-memory authentication for simplicity (e.g., admin:password).
 - Secure /api/tenants endpoints to require authentication.
 
-### D4.2. Enhance API (1 hour)  
+### D4.2. Enhance API (1 hour) --WORK IN PROGRESS  
 
 - Add PUT /api/tenants/{id} to update tenant details.  
 - Add DELETE /api/tenants/{id} to delete a tenant.  
@@ -205,8 +212,8 @@ D2.3. Install Postman
 - Basic React frontend displaying tenant list.
 - Changes pushed to GitHub with clear commit message.
 
-**Issues Found : 0**  
-**Issues Resolved : 0**
+**Day 4 Over all Issues Found : 3**  
+**Day 4 Over all Issues Resolved : 3**
 
 +++++++++<>----<><>+++++++++<>-------<>++++++++++++<>----<><>+++++++++<>-------<>++++++++++++
 
