@@ -50,6 +50,8 @@
 
  ---
 
+## Day 4 Spring Security, Securing APIs, REACT Setup and  Enhance CRUD APIs  
+
 ## D4.1.3 ISSUE-1 : Deprecated `withDefaultPasswordEncoder` and CORS Configuration in SecurityConfig.java
 
 **Issue**:  [D4.1.3 ISSUE-1 SCREENSHOT](./screenshots/D4.1.3%20STRIKED%20LINES_pic1.png)

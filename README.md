@@ -135,8 +135,8 @@ A project to manage tenant data using a modern tech stack.
 
 **Outcome :** Docker running containers, Git ready for version control, Postman set up for API testing.  
 
-**[Issues Found : 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-2--docker-setup)**  
-**[Issues Resolved : 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-2--docker-setup)**  
+**[Day 2 Overall Issues Found : 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-2--docker-setup)**  
+**[Day 2 Overall Issues Resolved : 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-2--docker-setup)**  
 
 ## Day 2 : Action Plan Completed Successfully. ✅
 
@@ -164,8 +164,8 @@ A project to manage tenant data using a modern tech stack.
 
   **[Issues Resolved : 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-3-task-issue)**  
 
-  **[Issues Found : 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-3--spring-security-401-error)**
-  **[Issues Resolved : 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-3--spring-security-401-error)**  
+  **[Day 3 Overall Issues Found : 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-3--spring-security-401-error)**
+  **[Day 3 Overall Issues Resolved : 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-3--spring-security-401-error)**  
 
 ## Day 3 : Action Plan Completed Successfully. ✅  
 
@@ -226,8 +226,8 @@ A project to manage tenant data using a modern tech stack.
 - Basic React frontend displaying tenant list.  
 - Changes pushed to GitHub with clear commit message.  
 
-**Day 4 Over all Issues Found : 3**  
-**Day 4 Over all Issues Resolved : 3**  
+**[Day 4 Over all Issues Found : 3](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-4-spring-security-securing-apis-react-setup-and--enhance-crud-apis)**  
+**[Day 4 Over all Issues Resolved : 3](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-4-spring-security-securing-apis-react-setup-and--enhance-crud-apis)**  
 
 ## Daywise Achievements💡
 
