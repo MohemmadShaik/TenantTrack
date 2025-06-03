@@ -164,7 +164,8 @@ A project to manage tenant data using a modern tech stack.
 
   **[Issues Resolved : 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-3-task-issue)**  
 
-  **[Day 3 Overall Issues Found : 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-3--spring-security-401-error)**
+  **[Day 3 Overall Issues Found : 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-3--spring-security-401-error)**  
+
   **[Day 3 Overall Issues Resolved : 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-3--spring-security-401-error)**  
 
 ## Day 3 : Action Plan Completed Successfully. ✅  
