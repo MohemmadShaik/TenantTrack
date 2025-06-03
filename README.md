@@ -106,84 +106,93 @@ A project to manage tenant data using a modern tech stack.
 
 ## [Day 1 Action Plan](./DAILY_PROGRESS.md#day-1-task-install-java17-maven-and-visual-studio-code-editor-ide)
 
-**Goal :** Install and verify OpenJDK 17, Maven, and VS Code to set up your development environment for TenantTrack.
-**Task : Need to complete 3 tasks**
+**Goal :** Install and verify OpenJDK 17, Maven, and VS Code to set up your development environment for TenantTrack.  
+**Task : Need to complete 3 tasks**  
 
-D1.1. Install Java17
-D1.2. Install Maven
-D1.3. Install Visual Studio Code (IDE)
+D1.1. Install Java17  
+D1.2. Install Maven  
+D1.3. Install Visual Studio Code (IDE)  
 
-**Issues Found : 0**  
-**Issues Resolved : 0**
+<*>---<*>**Issues Found : 0**  **Issues Resolved : 0**<*>---<*>  
 
-**Outcome :** Tools installed, verified, and ready for Java and Spring Boot development.
+**Outcome :** Tools installed, verified, and ready for Java and Spring Boot development.  
 
-## ✅ Day 1 : Task completed successfully
+## Day 1 : Action Plan Completed Successfully. ✅  
 
 ## [Day 2 Action Plan](./DAILY_PROGRESS.md#day-2-task-install-docker-git-and-postman)
 
 **Goal :** Install and verify Docker Desktop, Git, and Postman to complete your development environment setup for TenantTrack project.  
 **Task : Need to complete 3 tasks**
 
-D2.1. Install Docker
-D2.2. Install GIT Version Controller
+D2.1. Install Docker  
+D2.2. Install GIT Version Controller  
 D2.3. Install Postman  
 
-**[Issues Found : 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-2-task-issue)**  
-
-    Missing docker-desktop-data in wsl  
+**[Issues Found : 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-2-task-issue)** Missing docker-desktop-data in wsl  
 
 **[Issues Resolved : 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-2-task-issue)**  
 
-**Outcome :** Docker running containers, Git ready for version control, Postman set up for API testing.
+**Outcome :** Docker running containers, Git ready for version control, Postman set up for API testing.  
 
-## ✅ Day 2 : Task completed successfully
+<*>--<*>**Day 2 Over all Issues Found : 1**  **Day 4 Over all Issues Resolved : 1**<*>--<*>  
+
+## Day 2 : Action Plan Completed Successfully. ✅
 
 ## [Day 3 Action Plan](./DAILY_PROGRESS.md#day-3-task-setting-up-java-backend-with-spring-boot-and-mongodb-integration)
 
 **Goal :** Set up Java backend with Spring Boot and MongoDB integration.  
-**Tasks : Need to complete 5 tasks**
+**Tasks : Need to complete 5 tasks**  
 
-  D3.1. Set Up Spring Boot Project : Use [Spring Initializr](./tenant-backend/docs/screenshots/Day3_1_Spring-Initializr_pic.png) [https://start.spring.io], select Java 17, Maven, add Spring Web, Spring Data MongoDB, and Spring Security. Download, unzip, open in VS Code.
-  D3.2. Run MongoDB in Docker : Run docker run -d -p 27017:27017 --name tenant-mongo mongo:latest.
-  D3.3. Connect Spring Boot to MongoDB : Add MongoDB URI (mongodb://localhost:27017/tenantdb) in application.properties, create a Tenant model, and a repository for CRUD operations.
-  D3.4. Create Basic API : Build a REST controller with endpoints (GET /tenants, POST /tenants) to list and add tenants.
-  D3.5. Test and Commit : Test APIs with Postman, commit changes to GitHub (git add ., git commit -m "Day 3 backend setup", git push).
+- D3.1. Set Up Spring Boot Project : Use [Spring Initializr](./tenant-backend/docs/screenshots/Day3_1_Spring-Initializr_pic.png) [https://start.spring.io],  
+  Select Java 17, Maven, add Spring Web, Spring Data MongoDB, and Spring Security.  
+  Download, unzip, open in VS Code.  
 
-  **[Issues Found : 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-3-task-issue)**
-  
-     401 Unauthorized, The request is unauthenticated.  
+- D3.2. Run MongoDB in Docker : Run docker run -d -p   27017:27017 --name tenant-mongo mongo:latest.  
+
+- D3.3. Connect Spring Boot to MongoDB : Add MongoDB URI  
+  (mongodb://localhost:27017/tenantdb) in application.properties, create a Tenant model, and a repository for CRUD operations.  
+
+- D3.4. Create Basic API : Build a REST controller with
+  endpoints (GET /tenants, POST /tenants) to list and add tenants.  
+
+- D3.5. Test and Commit : Test APIs with Postman, commit  
+  changes to GitHub (git add ., git commit -m "Day 3 backend setup", git push).  
+
+  **[Issues Found : 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-3-task-issue)** 401 Unauthorized, The request is unauthenticated.  
 
   **[Issues Resolved : 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-3-task-issue)**  
 
-## ✅ Day 3 : Task completed successfully
+  <*>--<*>**Day 3 Over all Issues Found : 1, Issues Resolved : 1**<*>--<*>  
 
-## [Day 4 Action Plan](DAILY_PROGRESS.md#day-4-task-secure-apis--enhance-crud)
+## Day 3 : Action Plan Completed Successfully. ✅  
 
-**Goal :** - Enhance the backend with Spring Security for authentication,  
+## [Day 4 Action Plan](DAILY_PROGRESS.md#day-4-task-secure-apis--enhance-crud)  
+
+**Goal :** - Enhance the backend with Spring Security for 
+             authentication  
            - Add update/delete API endpoints, and  
-           - initialize the React frontend for tenant management.  
+           - initialize the React frontend for tenant  
+             management.  
 
 **Tasks : Need to complete 4 tasks**  
   
 ### D4.1. Configure Spring Security (2 hours)  
 
-  **D4.1.1.Add Spring Security Dependency :** ✅
+  --> **D4.1.1.Add Spring Security Dependency :** ✅
 
-  **D4.1.2.Remove Temporary Exclusion :** ✅  
+  --> **D4.1.2.Remove Temporary Exclusion :** ✅  
 
-  **D4.1.3.Configure Security [ISSUE-1 RESOLVED]:** ✅  
+  --> **D4.1.3.Configure Security [ISSUE-1 RESOLVED]** ✅  
   
-  **D4.1.4.Test Authentication [ISSUE-2 RESOLVED]:** ✅  
+  --> **D4.1.4.Test Authentication [ISSUE-2 RESOLVED]** ✅  
   
   **Day4 Issue 3 RESOLVED : Web Server Failed to Start - Port 8080 in Use**  
 
-  [BUGS & RESOLUTION](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-4--port-8080-conflict)
+  [BUGS & RESOLUTION](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-4--port-8080-conflict)  
+
   [SCREENSHOT](./tenant-backend/docs/screenshots/Day%204-%20Port%208080%20in%20use%20conflict.png)  
 
-  **Issues Found : 3**  
-
-  **Issues Resolved : 3**  
+  <*>--<*>**D4.1 Issues Found : 3**  **Issues Resolved : 3**<*>--<*>  
 
 - Implement basic authentication (username/password) for API endpoints.
 - Use in-memory authentication for simplicity (e.g., admin:password).
@@ -197,7 +206,8 @@ D2.3. Install Postman
 ### D4.3. Start React Frontend (2 hours)  
 
 - Set up a React app using create-react-app.  
-- Create a basic UI to display a list of tenants fetched from the backend.  
+- Create a basic UI to display a list of tenants fetched 
+  from the backend.  
 
 ### D4.4. Test and Commit (1 hour)  
 
@@ -208,14 +218,12 @@ D2.3. Install Postman
 **Outcome :**  
 
 - Backend APIs are secured with basic authentication.
-- Full CRUD functionality (Create, Read, Update, Delete) for tenants.
-- Basic React frontend displaying tenant list.
-- Changes pushed to GitHub with clear commit message.
+- Full CRUD functionality (Create, Read, Update, Delete)  
+  for tenants.  
+- Basic React frontend displaying tenant list.  
+- Changes pushed to GitHub with clear commit message.  
 
-**Day 4 Over all Issues Found : 3**  
-**Day 4 Over all Issues Resolved : 3**
-
-+++++++++<>----<><>+++++++++<>-------<>++++++++++++<>----<><>+++++++++<>-------<>++++++++++++
+<*>--<*>**Day 4 Over all Issues Found : 3, Issues Resolved : 3**<*>--<*>  
 
 ## Daywise Achievements💡
 
@@ -225,19 +233,19 @@ Day 3: CRUD APIs + Postman testing.
 Day 4: Spring Security, Securing APIs & Enhance CRUD APIs , React setup and Expanding TenantTrack
        Functionality'.
 
-## **Why This Works?**
+## **Why This Works?**  
 
 1. **Interview Ready**: Demonstrates debugging skills (a key interview criterion).  
 2. **Track Record**: Chronological errors + fixes show project evolution.  
 3. **Screenshot Integration**: Visual proof of issues resolved.  
 
-### **Pro Tips**
+### **Pro Tips**  
 
 - **Screenshot Folder**: Create a '/docs/screenshots' subfolder for images.  
 - **Tag Errors**: Use labels like '[HIGH PRIORITY]' or '[INTERVIEW TOPIC]'.  
 - **Link to Commits**: Reference Git commit hashes where fixes were applied.
 
-## VS-Code Extensions Installed
+## VS-Code Extensions Installed  
 
 1. **Java Extension Pack**  
 2. **Docker Extension Pack**  
