@@ -135,8 +135,8 @@ A project to manage tenant data using a modern tech stack.
 
 **Outcome :** Docker running containers, Git ready for version control, Postman set up for API testing.  
 
-**Issues Found : 1**  
-**Issues Resolved : 1**  
+**[Issues Found : 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-2--docker-setup)**  
+**[Issues Resolved : 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-2--docker-setup)**  
 
 ## Day 2 : Action Plan Completed Successfully. ✅
 
@@ -164,8 +164,8 @@ A project to manage tenant data using a modern tech stack.
 
   **[Issues Resolved : 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-3-task-issue)**  
 
-  **Issues Found : 1**
-  **Issues Resolved : 1**  
+  **[Issues Found : 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-3--spring-security-401-error)**
+  **[Issues Resolved : 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-3--spring-security-401-error)**  
 
 ## Day 3 : Action Plan Completed Successfully. ✅  
 
@@ -193,10 +193,10 @@ A project to manage tenant data using a modern tech stack.
 
   **[BUGS & RESOLUTION](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-414--port-8080-conflict)**  
 
-  **[SCREENSHOT](./tenant-backend/docs/screenshots/Day%204-%20Port%208080%20in%20use%20conflict.png)**  
+  **[ISSUE-3 SCREENSHOT](./tenant-backend/docs/screenshots/Day%204-%20Port%208080%20in%20use%20conflict.png)**  
 
-  **D4.1 Issues Found : 3**
-  **D4.1 Issues Resolved : 3**  
+  **[D4.1 Issues Found : 3](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#d413-issue-1--deprecated-withdefaultpasswordencoder-and-cors-configuration-in-securityconfigjava)**
+  **[D4.1 Issues Resolved : 3](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#d413-issue-1--deprecated-withdefaultpasswordencoder-and-cors-configuration-in-securityconfigjava)**  
 
 - Implement basic authentication (username/password) for API endpoints.
 - Use in-memory authentication for simplicity (e.g., admin:password).
