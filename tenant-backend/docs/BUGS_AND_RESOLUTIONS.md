@@ -85,14 +85,14 @@ Striked lines in `SecurityConfig.java` (`httpBasic`, `csrf`, `cors`, `withDefaul
 **Sol :** Open the SecurityConfig.java file and Set the missing realmName property for  
           BasicAuthenticationEntryPoint.
 
-    ~~~SecurityConfig.java
+    ```SecurityConfig.java
 
         import org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint;
 
         BasicAuthenticationEntryPoint authEntryPoint = new BasicAuthenticationEntryPoint();
         authEntryPoint.setRealmName("TenantTrackRealm");
 
-    ~~~
+    ```
 
 **Explanation:**  
 
@@ -116,3 +116,61 @@ Striked lines in `SecurityConfig.java` (`httpBasic`, `csrf`, `cors`, `withDefaul
 [ISSUE-3 SCREENSHOT](./screenshots/Day%204-%20Port%208080%20in%20use%20conflict.png)
 
 **Verification**: Application started successfully, and APIs were accessible via Postman.
+
+---
+
+## Day 4.2 : Troubleshoot 404 Error for POST Request (Trailing Slash)
+
+### Issue 9 : 404 Not Found - No static resource api/tenants
+
+**Cause**: The POST request URL had a trailing slash (`http://localhost:8080/api/tenants/`), which didn’t match the `/api/tenants` endpoint mapping in TenantController.
+
+**Resolution**:
+
+- Verified the URL and removed the trailing slash (`http://localhost:8080/api/tenants`).
+- Successfully sent POST requests to add new tenant records.
+- Sent a GET request to [http://localhost:8080/api/tenants] to view all records.
+
+**Records Added**:
+
+- Tenant 1: Anjali Patel (ID: 682b397078f66a3fda161d1d, Room: 105, Rent: 9000)
+- Tenant 2: Neha Sharma (ID: 682b397078f66a3fda161d1f, Room: 107, Rent: 11000)
+- Tenant 3: Rahul Gupta (ID: 682b397078f66a3fda161d20, Room: 108, Rent: 12000)
+- Tenant 4: Sonia Mehra (ID: 682b397078f66a3fda161d21, Room: 109, Rent: 13000)
+
+**Screenshots**:
+
+- [POST Failure 404](./screenshots/Day4.2_POST_404_TrailingSlash_Pic1.png)
+- [POST Success After Fix](./screenshots/Day4.2_POST_Success_TrailingSlashFix_Pic2.png)
+- [GET All Tenants](./screenshots/Day4.2_GET_AllTenants_TrailingSlashFix_Pic3.png)
+
+**Reference**: [Commit Hash]
+
+## Q) Why the Trailing Slash Caused a 404?  
+
+- In Spring Boot, the @RequestMapping("/api/tenants") on TenantController.java maps exactly to /api/tenants.
+- A trailing slash (/api/tenants/) is treated as a different path unless Spring Boot is configured to ignore 
+  trailing slashes.
+- Since /api/tenants/ didn’t match any mapped endpoint, Spring Boot’s static resource handler tried to find a 
+  resource at that path, resulting in the "No static resource api/tenants" error.
+- Fix in Code (Optional):
+  To make your API more flexible, you can configure Spring Boot to ignore trailing slashes by adding this to application.properties :
+  
+        ```application.Properties
+
+            spring.mvc.pathmatch.trailing-slash=true
+
+        ```
+- Alternatively, update TenantController.java to handle both /api/tenants and /api/tenants/:
+
+          ```TenantController.java
+
+               @RestController
+              @RequestMapping(value = "/api/tenants", trailingSlashes = TrailingSlashBehavior.NEVER)
+              @CrossOrigin(origins = "http://localhost:3000")
+              public class TenantController {
+                  // ...
+              }
+
+          ```
+- However, since removing the trailing slash resolved the issue, this change is optional.

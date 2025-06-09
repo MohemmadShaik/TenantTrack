@@ -1,4 +1,4 @@
-# 💼 Interview Preparation Quiz for TenantTrack
+# 🧩 Interview Preparation Quiz for TenantTrack 🧩
 
 Welcome to the **Interview Prep Quiz** section of **TenantTrack**. This document contains categorized quiz questions to help you revise key concepts quickly.
 
@@ -122,9 +122,9 @@ Q6. What is the role of an IDE like VS Code in software development?**
 Q7. How would you explain CI/CD in simple terms?**
 👉 **A:** CI (Continuous Integration) means automatically testing code on every commit. CD (Continuous Deployment/Delivery) means deploying code automatically after successful tests.
 
-+++++++++<>----<><>+++++++++<>-------<>++++++++++++<>----<><>+++++++++<>-------<>++++++++++++
+    < $ >+++++++++< . . . . >----< . . >< . . >+++++++++< . . >-------< . . . . >++++++++++++<. . . .>+++++++++< $ >
 
-**Day 4 Q&A Quiz**  
+## Day 4 Q&A Quiz  
 
 ## 1.What is the purpose of @EnableWebSecurity in SecurityConfig.java?
   
@@ -251,3 +251,39 @@ D) Disables CORS
 Answer: B) Requires username/password for API access  
 
 **Challenge Question :** If you get a 403 Forbidden error on a POST request in Postman, what could be the cause, and how would you fix it? (Hint: Check CSRF settings and authentication.)
+
+## Day 4.2 Q&A Quiz (Trailing Slash Issue)
+
+### Q16 : Do We Need to Save POST, PUT, and DELETE Requests Each Time?
+
+**Answer**:
+
+- No, saving each request execution is not necessary.
+- Best practice: Save each type of request (POST, PUT, DELETE) once in a Postman collection for reuse.
+- Created a `TenantTrack API` collection in Postman with saved requests for GET, POST, PUT, and DELETE.
+- Reused saved requests by updating the body or URL as needed, without saving each variation.
+
+**Screenshots**:[Postman Collection Setup](./docs/screenshots/Day%204.2.1%20Postman%20Collection%20Setup.png)
+
+### Q17: Why might a trailing slash in a URL cause a 404 Not Found error in Spring Boot?  
+
+A) The request body is invalid  
+B) The endpoint mapping doesn’t match the URL with the trailing slash  
+C) MongoDB connection failed  
+D) Authentication credentials are incorrect  
+**Answer**: B) The endpoint mapping doesn’t match the URL with the trailing slash  
+
+**Challenge Question**: [How can you make a Spring Boot application ignore trailing slashes in URLs?](./docs/BUGS_AND_RESOLUTIONS.md#q-why-the-trailing-slash-caused-a-404)
+**Answer**: Set `spring.mvc.pathmatch.trailing-slash=true` in `application.properties`, or use `@RequestMapping` with `trailingSlashes = TrailingSlashBehavior.NEVER`.  
+
+## Day 4.2 Q&A Quiz (Postman Workflow)
+
+**Q18: Do you need to save a POST request in Postman every time you send it?**  
+A) Yes, to keep a record of every request  
+B) No, save it once in a collection and reuse it  
+C) Yes, to avoid authentication errors  
+D) No, Postman automatically saves all requests  
+**Answer**: B) No, save it once in a collection and reuse it  
+
+**Challenge Question**: What are the benefits of saving API requests in a Postman collection?  
+**Answer**: Saves time by reusing configurations, ensures consistency (e.g., correct URL and auth), aids debugging, and serves as documentation for the API testing process.  

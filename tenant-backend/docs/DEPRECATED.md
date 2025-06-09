@@ -1,7 +1,7 @@
 
 # DEPRECATED.MD file created from Day4 task onwards to place all the deprecated methods in one place.
 
-# D4.1. Configure Spring Security  
+## D4.1. Configure Spring Security  
 
 Task D4.1.3 : SecurityConfig.java
 
