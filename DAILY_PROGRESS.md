@@ -100,7 +100,7 @@ Let’s set up a GitHub repository for TenantTrack to store your portfolio notes
 
 - Open the README.md file in the repository and add the following :
 
-# TenantTrack
+## TenantTrack
 
 A project to manage tenant data using Docker, MongoDB, and Java.
 
@@ -117,7 +117,7 @@ Let’s install Git and set it up on your system.
 
 1.Download and Install Git:
 
-- Download the Git installer for Windows (AMD64) from: https://git-scm.com/download/win.
+- Download the Git installer for Windows (AMD64) from: [https://git-scm.com/download/win].
 - Run the installer as admin.
 - Use default settings, but ensure:
 - “Git Bash Here” is enabled for File Explorer integration.
@@ -627,7 +627,7 @@ The Spring Boot app (version 3.4.5) is running smoothly with no issues,And all c
 **- D4.1.4.Test Authentication**  
     [ISSUE-2 RESOLVED](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#d414-issue-2--spring-security-realmname-error--d414-issue-2-screenshot-error-)  
 
-===<>=====<>=======<>===<>=====<>=======<>===<>=====<>=======<>===<>=====<>=======<>
+### ===<>=====<>=======<>===<>=====<>=======<>===<>=====<>=======<>===<>=====<>=======<>
 
 **D4.1.1.Add Spring Security Dependency :**  
 
@@ -875,14 +875,14 @@ The key details from the error are:
 **Sol :** Open the SecurityConfig.java file and Set the missing realmName property for
           BasicAuthenticationEntryPoint.  
 
-    ~~~SecurityConfig.java
+    ```SecurityConfig.java
 
         import org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint;
 
         BasicAuthenticationEntryPoint authEntryPoint = new BasicAuthenticationEntryPoint();
         authEntryPoint.setRealmName("TenantTrackRealm");
 
-    ~~~
+    ```
 
 **Explanation:**  
 
@@ -983,9 +983,10 @@ The key details from the error are:
                  ```
      [postman POST Response Screenshot](./tenant-backend/docs/screenshots/D4.1.4%20%20Postman%20POST%20Request%20Outcome_pic.png)
 
-<*>=======<*>===**TASK DAY 4.1 : Configure Spring Security COMPLETED**===<*>=======<*>  
+    **TASK DAY 4.1 : Configure Spring Security COMPLETED**  
 
-+++++++++<>----<><>+++++++++<>-------<>++++++++++++<>----<><>+++++++++<>-------<>++++++++++++
+ **Day 4.1 Short Summary :**
+ **=======================**  
 
 1. Located and fixed SecurityConfig by setting the realmName property for
        BasicAuthenticationEntryPoint, and  Updated the SecurityConfig.java
@@ -1104,3 +1105,343 @@ The key details from the error are:
         git add .  
         git commit -m "Day4.1 Configure Spring Security ( All 4 tasks) completed and Resolved 2 issues successfully."  
         git push origin main  
+
+## Day 4.2: Enhance API (Add PUT and DELETE Endpoints and do the Unit and Integration Tests)
+
+**Goal :** Add two new REST API endpoints to your Spring Boot backend:
+
+- PUT /api/tenants/{id}: Update an existing tenant’s details by ID.  
+- DELETE /api/tenants/{id}: Delete a tenant by ID.  
+- And do the unit and Integration tests (nothing but the testing part) for the two newly created endpoints (i.e;
+  PUT and DELETE).  
+
+**Prerequisites :**
+
+- Spring Boot application is running (mvn spring-boot:run).
+- MongoDB container (tenant-mongo) is running (docker ps confirms 0.0.0.0:27017->27017/tcp).
+- Spring Security is configured with Basic Authentication (admin/password) and CORS enabled for [http://localhost:3000].
+- Postman is set up for testing APIs with Basic Auth.  
+
+## Step-by-Step Implementation  
+
+1. Update TenantService.java  
+Add methods to handle updating and deleting tenants in the service layer.
+
+**Action :**
+
+- Open D:\TenantProject\TenantTrack\tenant-backend\src\main\java\com\tenanttrack\tenant_backend\service\TenantService.java.
+- Update the file to include **update** and **delete** methods :
+
+        ```TenantService.java
+        package com.tenanttrack.tenant_backend.service;
+
+            import com.tenanttrack.tenant_backend.model.Tenant;
+            import com.tenanttrack.tenant_backend.repository.TenantRepository;
+            import org.springframework.stereotype.Service;
+
+            import java.util.List;
+            import java.util.Optional;
+
+            @Service
+            public class TenantService {
+                private final TenantRepository repo;
+                public TenantService(TenantRepository repo){ this.repo = repo; }
+
+                public List<Tenant> all(){ return repo.findAll(); } //GET
+                public Tenant add(Tenant t){ return repo.save(t); } //PUT
+
+                //UPDATE
+                public Tenant update(String id, Tenant updatedTenant) {
+                    Optional<Tenant> existingTenant = repo.findById(id);
+                    if (existingTenant.isPresent()) {
+                        Tenant tenant = existingTenant.get();
+                        tenant.setName(updatedTenant.getName());
+                        tenant.setPhone(updatedTenant.getPhone());
+                        tenant.setDoj(updatedTenant.getDoj());
+                        tenant.setRoomNumber(updatedTenant.getRoomNumber());
+                        tenant.setRent(updatedTenant.getRent());
+                        return repo.save(tenant);
+                    } else {
+                        throw new RuntimeException("Tenant not found with id: " + id);
+                    }
+                }
+
+                //DELETE
+                public void delete(String id) {
+                    if (repo.existsById(id)) {
+                        repo.deleteById(id);
+                    } else {
+                        throw new RuntimeException("Tenant not found with id: " + id);
+                    }
+                }
+            }
+       ```
+
+**Explanation :**
+
+**Update Method :** Finds the tenant by ID using **repo.findById**. If found, updates fields (name, phone, doj, roomNumber, rent) and saves the updated tenant. Throws an exception if the tenant doesn’t exist.
+**Delete Method :** Checks if the tenant exists using **repo.existsById**. If found, deletes it; otherwise, throws an exception.
+Added **Optional** and **existsById** for robust error handling, aligning with REST best practices.
+
+2. Update TenantController.java
+Add the PUT and DELETE endpoints to the controller.
+
+**Action :**
+
+Open D:\TenantProject\TenantTrack\tenant-backend\src\main\java\com\tenanttrack\tenant_backend\controller\TenantController.java.
+Update the file to include the new endpoints :
+
+    ```TenantController.java
+    
+        package com.tenanttrack.tenant_backend.controller;
+
+        import com.tenanttrack.tenant_backend.model.Tenant;
+        import com.tenanttrack.tenant_backend.service.TenantService;
+        import org.springframework.web.bind.annotation.*;
+        import org.springframework.http.HttpStatus;
+
+        import java.util.List;
+
+        @RestController
+        @RequestMapping("/api/tenants")
+        @CrossOrigin(origins = "http://localhost:3000") // Allow React frontend
+        public class TenantController {
+        
+            private final TenantService service;
+            public TenantController(TenantService service){ this.service = service; }
+
+            @GetMapping
+            public List<Tenant> getAll(){
+                return service.all();
+            }
+
+            @PostMapping
+            public Tenant create(@RequestBody Tenant tenant){
+                return service.add(tenant);
+            }
+
+            @PutMapping("/{id}")
+            public Tenant update(@PathVariable String id, @RequestBody Tenant tenant) {
+                return service.update(id, tenant);
+            }
+
+            @DeleteMapping("/{id}")
+            @ResponseStatus(HttpStatus.NO_CONTENT) // Return 204 on successful deletion
+            public void delete(@PathVariable String id) {
+                service.delete(id);
+            }
+
+        }
+
+    ```
+**Explanation :**
+
+**PUT Endpoint :** Maps to **/api/tenants/{id}**, takes the tenant ID from the URL and the updated tenant data from the request body. Calls **service.update** and returns the updated tenant.
+**DELETE Endpoint :** Maps to **/api/tenants/{id}**, takes the tenant ID, calls **service.delete**, and returns a **204 No Content** status (standard for successful DELETE requests).
+**@CrossOrigin:** Explicitly set to [http://localhost:3000] to ensure compatibility with the React frontend (consistent with **SecurityConfig** CORS settings).
+@ResponseStatus: Ensures the DELETE endpoint returns **204 No Content** on success.
+
+3. **Handle Exceptions Globally (Optional but Recommended)**
+To provide consistent error responses for exceptions (e.g., "Tenant not found"), add a global exception handler.
+
+**Action :**
+
+Create a new file **GlobalExceptionHandler.java**
+ in **D:\TenantProject\TenantTrack\tenant-backend\src\main\java\com\tenanttrack\tenant_backend\controller:**
+
+    ```GlobalExceptionHandler.java
+    package com.tenanttrack.tenant_backend.controller;
+
+        import org.springframework.http.HttpStatus;
+        import org.springframework.http.ResponseEntity;
+        import org.springframework.web.bind.annotation.ControllerAdvice;
+        import org.springframework.web.bind.annotation.ExceptionHandler;
+
+        @ControllerAdvice
+        public class GlobalExceptionHandler {
+        
+            @ExceptionHandler(RuntimeException.class)
+            public ResponseEntity<String> handleRuntimeException(RuntimeException ex) {
+                return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
+            }
+        }
+
+    ```
+
+**Explanation:**
+
+- Catches **RuntimeException** (e.g., "Tenant not found") and returns a **404 Not Found** response with the error message.
+- Enhances API usability by providing clear error messages for clients (Postman or React).
+
+4. **Test APIs with Postman**
+
+Test the new PUT and DELETE endpoints to ensure they work with Basic Authentication.
+
+**Action :**
+
+Start the Application :
+cd D:\TenantProject\TenantTrack\tenant-backend> mvn spring-boot:run
+
+Confirm logs show **Started TenantBackendApplication** and MongoDB connection (**localhost:27017**).
+
+Ensure MongoDB is Running :
+docker ps
+
+If **tenant-mongo** is not running, start it :
+docker start tenant-mongo
+
+- **Test PUT /api/tenants/{id}:** [UPDATE REQUEST SCREENSHOT](./tenant-backend/docs/screenshots/Day%204.2.1%20TenantTrack%20API%20(%203.%20PUT%20%20Request%20).png)  
+
+1. Open Postman, create a new request in the **TenantTrack** workspace.
+2. Set method to **PUT**, URL: **[http://localhost:8080/api/tenants/{id}]** (replace **{id}** with a valid tenant ID, e.g., 682b397078f66a3fda161d1a from your earlier POST response).
+3. Go to **Authorization** tab, select Basic Auth, enter:
+Username: **admin**
+Password: **password**
+4. Go to **Body** > **raw** > **JSON**, add :
+
+        ```Json
+            {
+               "roomNumber": "110",
+               "name": "Rahul",
+               "phone": "8323865455",
+                "rent": 3000
+            }
+        ```
+5. Click **Send**.
+6. Expected Response: **200 OK** with the updated tenant data :
+{
+    "id": "6844b24b5a990a6864ec0171",
+    "name": "Rahul",
+    "phone": "8323865455",
+    "doj": null,
+    "roomNumber": "110",
+    "rent": 3000.0
+}
+
+7. Error Case: If the ID doesn’t exist, expect 404 Not Found with message: Tenant not found with id: [id].
+
+- **Test DELETE /api/tenants/{id}:** [DELETE REQUEST SCREENSHOT](./tenant-backend/docs/screenshots/Day%204.2.1%20TenantTrack%20API%20(%204.%20DELETE%20Request%20).png)  
+
+1. Create a new request in Postman.
+2. Set method to DELETE, URL: [http://localhost:8080/api/tenants/{id}] (use the same ID, e.g., 682b397078f66a3fda161d1a).
+3. Set **Basic Auth** with **admin/password**.
+4. Click **Send**.
+5. Expected Response: **204 No Content** (no response body).
+6. Verify Deletion: Send a GET request to [http://localhost:8080/api/tenants]. The deleted tenant should no 
+   longer appear. [DELETED SCREENSHOTS](./tenant-backend/docs/screenshots/Day4.2_DELETE_Response.png)
+7. Error Case: If the ID doesn’t exist, expect **404 Not Found** with message: **Tenant not found with id: 
+   [id]**.
+
+- **Retest GET and POST Requests:**
+
+1. GET [http://localhost:8080/api/tenants] : Confirm existing tenants are listed.
+2. POST a new tenant (e.g., same as your earlier POST with Amit Sharma) to ensure existing endpoints are 
+   unaffected.
+3. Verify Tests :
+
+   - Ensure the existing TenantBackendApplicationTests still passes after adding the new endpoints.
+
+Action:
+
+Run tests:
+
+    ```bash
+        mvn clean install
+    ```
+
+- Expected Output: Similar to your previous successful build:
+
+        ```text
+
+            [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+            [INFO] BUILD SUCCESS
+
+         ```
+
+- The **@WithMockUser** annotation in **TenantBackendApplicationTests.java** ensures the test runs with a  
+  mock **admin** user, bypassing authentication issues.  
+
+## Best Practice: Organize Your Requests in a Postman Collection (i.e nothing but a Postman Workflow which is not mandatory to create it but it's recommended for best practices.)
+
+- Since we are working on a project with multiple endpoints and operations, I recommend organizing our requests in a Postman
+  collection for TenantTrack.
+
+**Action :**
+
+- Create a Collection (if not already done): [CREATE COLLECTION in Postman SCREENSHOT](./tenant-backend/docs/screenshots/Day%204.2.1%20TenantTrack%20API%20(%200.%20New%20Postman%20Collection).png)
+        - Name it TenantTrack API.
+        - In Postman, click Collections > + (New Collection).
+- Save Existing Requests:
+
+- Save your current requests in this collection:
+
+1. Get All Tenants (GET): [GET REQUEST SCREENSHOT](./tenant-backend/docs/screenshots/Day%204.2.1%20TenantTrack%20API%20(%201.%20GET%20Request%20).png)
+    - URL: [http://localhost:8080/api/tenants]
+    - Method: GET
+    - Authorization: Basic Auth (admin/password)
+
+2. Create Tenant (POST): [POST REQUEST SCREENSHOT](./tenant-backend/docs/screenshots/Day%204.2.1%20TenantTrack%20API%20(%202.%20POST%20%20Request%20).png)
+    - URL: [http://localhost:8080/api/tenants]
+    - Method: POST
+    - Authorization: Basic Auth (admin/password)
+    - Body (example):
+
+        {
+            "roomNumber": "110",
+            "name": "Amit Kumar",
+            "phone": "9321098765",
+            "rent": 14000
+        }
+
+3. Update Tenant (PUT): [PUT REQUEST SCREENSHOT](./tenant-backend/docs/screenshots/Day%204.2.1%20TenantTrack%20API%20(%203.%20PUT%20%20Request%20).png)
+
+    - URL: [http://localhost:8080/api/tenants/{id}]
+    - Method: PUT
+    - Authorization: Basic Auth (admin/password)
+    - Body (example):
+
+        {
+            "roomNumber": "110",
+            "name": "Amit Sharma",
+            "phone": "9321098765",
+            "rent": 14500
+        }
+
+4. Delete Tenant (DELETE): [DELETE REQUEST SCREENSHOT](./tenant-backend/docs/screenshots/Day%204.2.1%20TenantTrack%20API%20(%204.%20DELETE%20Request%20).png)
+
+    - URL: [http://localhost:8080/api/tenants/{id}]
+    - Method: DELETE
+    - Authorization: Basic Auth (admin/password)
+
+- **Reuse Requests:**
+- For each new POST, PUT, or DELETE, open the saved request from the TenantTrack API collection, update the body or URL
+  (e.g., change the id), and send. No need to save again unless you’re creating a new variation.  
+
+## Commit and push the changes to our Github TenantTrack Repo  
+
+    cd D:\TenantProject\TenantTrack\tenant-backend> git add .
+    D:\TenantProject\TenantTrack\tenant-backend> git commit -m "Day 4.2.1: Added and tested the PUT and DELETE API request in Postman app and also created Postman collection for API requests, updated documentation with workflow."
+    D:\TenantProject\TenantTrack\tenant-backend> git push origin main
+
+cd D:\TenantProject\TenantTrack\tenant-backend
+git add .
+git commit -m "Day 4.2: Created Postman collection for API requests, updated documentation with workflow"
+git push origin main
+
+  **TASK Day4.2.1 : Adding update and delete operations in our TenantTrack application COMPLETED**  
+  
+- **Day4.2.1 Status : Completed** ✅
+- **Day4.2.1 Task short summary :**
+  - Added update and delete methods in TenantService.java.
+  - Added PUT and DELETE endpoints in TenantController.java.
+  - Added PUT /api/tenants/{id} to update tenant details.
+  - Added DELETE /api/tenants/{id} to delete a tenant.
+  - Tested PUT (200 OK) and DELETE (204 No Content) in Postman with Basic Auth successfully.
+  - Resolved 404 error for POST request due to trailing slash.
+  - Added multiple tenant records and retrieved all records using GET /api/tenants.
+  - Created a Postman collection (`TenantTrack API`) to save and reuse requests.
+  - Ran mvn clean install successfully.
+  - Updated documentation (BUGS_AND_RESOLUTIONS.md, DAILY_PROGRESS.md, README.md, InterviewPrepQuiz.md).
+  - Committed changes to GitHub.  
+
+**TASK Day4.2.2 : Add unit and integration tests for the CRUD endpoints.** 🚧  

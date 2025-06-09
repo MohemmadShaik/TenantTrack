@@ -174,39 +174,42 @@ A project to manage tenant data using a modern tech stack.
 
 **Goal :**  
 
-- Enhance the backend with Spring Security for authentication  
-- Add update/delete API endpoints, and  
-- initialize the React frontend for tenant management.  
+- D4.1 : Enhance the backend with Spring Security for authentication (4 tasks)  
+- D4.2 : Add update and delete API endpoints and do Unit and Integration testing. (3 tasks)  
+- D4.3 : Initialize the React frontend for tenant management.  
+- D4.4 : Now test all the so far API endpoints created (i.e.; GET,POST,UPDATE AND DELETE) and also test the React app in  
+         browser.  
+- D4.5 : Finally commit changes to Github.  
 
-**Tasks : Need to complete 4 tasks**  
+**D4.1 Task Status : Completed all 4 tasks**  
+**D4.2 Task Status : D4.2.1 task completed and D4.2.2 task in progress**  
   
-### D4.1. Configure Spring Security (2 hours)  
+### D4.1. Configure Spring Security for authentication  
 
    **--> D4.1.1.Add Spring Security Dependency :** ✅
-
    **--> D4.1.2.Remove Temporary Exclusion :** ✅  
-
    **--> D4.1.3.Configure Security [ISSUE-1 RESOLVED]** ✅  
-  
    **--> D4.1.4.Test Authentication [ISSUE-2 RESOLVED]** ✅  
   
-  **Day4 Issue 3 RESOLVED : Web Server Failed to Start - Port 8080 in Use**  
+  **Day4 Issue 3 Resolved: Web Server Failed to Start - Port 8080 in Use**  
 
-  **[BUGS & RESOLUTION](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-414--port-8080-conflict)**  
+  **[D4.1 BUGS & RESOLUTION](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-414--port-8080-conflict)**  
 
   **[ISSUE-3 SCREENSHOT](./tenant-backend/docs/screenshots/Day%204-%20Port%208080%20in%20use%20conflict.png)**  
 
   **[D4.1 Issues Found : 3](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#d413-issue-1--deprecated-withdefaultpasswordencoder-and-cors-configuration-in-securityconfigjava)**
   **[D4.1 Issues Resolved : 3](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#d413-issue-1--deprecated-withdefaultpasswordencoder-and-cors-configuration-in-securityconfigjava)**  
 
-- Implement basic authentication (username/password) for API endpoints.
-- Use in-memory authentication for simplicity (e.g., admin:password).
-- Secure /api/tenants endpoints to require authentication.
+### D4.2. Enhance API [Daily Progress](DAILY_PROGRESS.md#day-42-enhance-api-add-put-and-delete-endpoints-and-do-the-unit-tests)
 
-### D4.2. Enhance API (1 hour) --WORK IN PROGRESS  
+  **--> D4.2.1 : Adding update and delete operations in our TenantTrack application.**✅  
+  **--> D4.2.2 : Add unit and integration tests for the CRUD endpoints.** 🚧
+  **--> D4.2.3 : Without using Postman app alternatively, check MongoDB directly to see all the records** 🚧
 
-- Add PUT /api/tenants/{id} to update tenant details.  
-- Add DELETE /api/tenants/{id} to delete a tenant.  
+- **[D4.2.1 Issues Found : 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#day-42--troubleshoot-404-error-for-post-request-trailing-slash)**
+- **[D4.2.1 Issues Resolved : 1](./tenant-backend/docs/BUGS_AND_RESOLUTIONS.md#q-why-the-trailing-slash-caused-a-404)**
+- **Outcome**: Full CRUD functionality tested; Postman workflow optimized.
+- **[Day 4 Quiz](./tenant-backend/InterviewPrepQuiz.md#day-4-qa-quiz)**
 
 ### D4.3. Start React Frontend (2 hours)  
 
